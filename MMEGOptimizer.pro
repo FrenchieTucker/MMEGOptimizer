@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-    MMEGOptimizer_ctrl.cpp
+    MMEGOptimizer_ctrl.cpp \
+    MMEGOptimizer_wdg.cpp
 
 HEADERS += \
-    MMEGOptimizer_ctrl.h
+    MMEGOptimizer_ctrl.h \
+    MMEGOptimizer_wdg.h
 
 FORMS += \
         MMEGOptimizer.ui

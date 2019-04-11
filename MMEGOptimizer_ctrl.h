@@ -17,24 +17,23 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef MMEGOPTIMIZER_WDG_H
-#define MMEGOPTIMIZER_WDG_H
+#ifndef MMEGOPTIMIZER_CTRL_H
+#define MMEGOPTIMIZER_CTRL_H
 
-#include <QMainWindow>
+#include <memory>
 
-#include "ui_MMEGOptimizer.h"
+#include "MMEGOptimizer_wdg.h"
 
 class MMEGOptimizer_ctrl
 {
 public:
-    explicit MMEGOptimizer_ctrl();
+    MMEGOptimizer_ctrl();
     ~MMEGOptimizer_ctrl() = default;
 
     void show();
 
 private:
-    Ui::MMEGOptimizer_wdg ui;
-    QMainWindow m_wdg;
+    std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
 };
 
-#endif // MMEGOPTIMIZER_WDG_H
+#endif // MMEGOPTIMIZER_CTRL_H

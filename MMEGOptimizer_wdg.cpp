@@ -17,15 +17,17 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include "MMEGOptimizer_ctrl.h"
-#include <QApplication>
+#include "MMEGOptimizer_wdg.h"
 
-int main(int argc, char** argv)
+MMEGOptimizer_wdg::MMEGOptimizer_wdg()
 {
-    QApplication a(argc, argv);
+    m_ui.setupUi(&m_wdg);
+}
 
-    MMEGOptimizer_ctrl w;
-    w.show();
+MMEGOptimizer_wdg::~MMEGOptimizer_wdg()
+{}
 
-    return a.exec();
+void MMEGOptimizer_wdg::show()
+{
+    m_wdg.show();
 }

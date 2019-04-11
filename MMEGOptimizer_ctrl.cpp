@@ -20,11 +20,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "MMEGOptimizer_ctrl.h"
 
 MMEGOptimizer_ctrl::MMEGOptimizer_ctrl()
+    : m_wdg(new MMEGOptimizer_wdg)
 {
-    ui.setupUi(&m_wdg);
 }
 
 void MMEGOptimizer_ctrl::show()
 {
-    m_wdg.show();
+    m_wdg->show();
 }
