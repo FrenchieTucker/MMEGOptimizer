@@ -29,7 +29,7 @@ class MMEGOptimizer_wdg : public QObject
     Q_OBJECT
 
 public:
-    MMEGOptimizer_wdg();
+    MMEGOptimizer_wdg(QAbstractItemModel&);
     ~MMEGOptimizer_wdg();
 
     void show();

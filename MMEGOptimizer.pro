@@ -31,7 +31,8 @@ SOURCES += \
 
 HEADERS += \
     MMEGOptimizer_ctrl.h \
-    MMEGOptimizer_wdg.h
+    MMEGOptimizer_wdg.h \
+    extractionProcess.h
 
 FORMS += \
         MMEGOptimizer.ui

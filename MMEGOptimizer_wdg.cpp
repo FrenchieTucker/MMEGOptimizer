@@ -19,7 +19,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "MMEGOptimizer_wdg.h"
 
-MMEGOptimizer_wdg::MMEGOptimizer_wdg()
+MMEGOptimizer_wdg::MMEGOptimizer_wdg(QAbstractItemModel& /*monsterMdl*/)
     : QObject()
 {
     m_ui.setupUi(&m_wdg);

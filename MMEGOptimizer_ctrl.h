@@ -24,6 +24,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "MMEGOptimizer_wdg.h"
 
+#include <QtGui/QStandardItemModel>
+
 class MMEGOptimizer_ctrl
 {
 public:
@@ -34,7 +36,15 @@ public:
 
 private:
     void importerFichier();
+    void fillModels(QString content);
 
+    void fillCreatures(QJsonValue val);
+    void fillGuild(QJsonValue val);
+    void fillProfile(QJsonValue val);
+    void fillRunes(QJsonValue val);
+    void fillVersion(QJsonValue val);
+
+    QStandardItemModel m_infosMdl;
     std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
 };
 
