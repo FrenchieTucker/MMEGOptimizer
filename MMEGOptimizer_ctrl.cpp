@@ -18,7 +18,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include "MMEGOptimizer_ctrl.h"
-#include "gzFileExtractor.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtCore/QString>
@@ -47,6 +46,6 @@ void MMEGOptimizer_ctrl::importerFichier()
         return;
 
     std::cout << "fichier à importer : " << fileName.toUtf8().constData() << std::endl;
-    QString content = extractInfosFromFile(fileName.toUtf8().constData());
-    std::cout << "contenu : [" << content.toUtf8().constData() << "]" << std::endl;
+    //QString content = extractInfosFromFile(fileName.toUtf8().constData());
+    //std::cout << "contenu : [" << content.toUtf8().constData() << "]" << std::endl;
 }
