@@ -20,8 +20,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "MMEGOptimizer_wdg.h"
 
 MMEGOptimizer_wdg::MMEGOptimizer_wdg()
+    : QObject()
 {
     m_ui.setupUi(&m_wdg);
+
+    QObject::connect(m_ui.actionImport, &QAction::triggered, this, &MMEGOptimizer_wdg::importDemande);
 }
 
 MMEGOptimizer_wdg::~MMEGOptimizer_wdg()

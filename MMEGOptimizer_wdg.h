@@ -24,13 +24,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "ui_MMEGOptimizer.h"
 
-class MMEGOptimizer_wdg
+class MMEGOptimizer_wdg : public QObject
 {
+    Q_OBJECT
+
 public:
     MMEGOptimizer_wdg();
     ~MMEGOptimizer_wdg();
 
     void show();
+
+signals:
+    void importDemande();
 
 private:
     Ui::MMEGOptimizer_wdg m_ui;

@@ -1,0 +1,91 @@
+/* Ce fichier contient la liste de tous les procs max possible selon le type et la rereté */
+{
+   "speed": {
+        "common": 1,
+        "uncommon": 1,
+        "rare": 2,
+        "epic": 3,
+        "legendary": 4,
+        "dark": 6
+    },
+    "attack": {
+        "common": 11,
+        "uncommon": 16,
+        "rare": 26,
+        "epic": 36,
+        "legendary": 49,
+        "dark": 64
+    },
+    "attack%": {
+        "common": 1,
+        "uncommon": 1,
+        "rare": 2,
+        "epic": 3,
+        "legendary": 5,
+        "dark": 7
+    },
+    "hp%": {
+        "common": 1,
+        "uncommon": 2,
+        "rare": 3,
+        "epic": 4,
+        "legendary": 6,
+        "dark": 7
+    },
+    "hp": {
+        "common": 51,
+        "uncommon": 75,
+        "rare": 113,
+        "epic": 151,
+        "legendary": 227,
+        "dark": 294
+    },
+    "defense%": {
+        "common": 1,
+        "uncommon": 2,
+        "rare": 3,
+        "epic": 4,
+        "legendary": 6,
+        "dark": 8
+    },
+    "defense": {
+        "common": 6,
+        "uncommon": 9,
+        "rare": 14,
+        "epic": 19,
+        "legendary": 26,
+        "dark": 34
+    },
+    "criticalChance%": {
+        "common": 1,
+        "uncommon": 2,
+        "rare": 2,
+        "epic": 3,
+        "legendary": 4,
+        "dark": 6
+    },
+    "criticalDamage%": {
+        "common": 1,
+        "uncommon": 2,
+        "rare": 4,
+        "epic": 6,
+        "legendary": 7,
+        "dark": 8
+    },
+    "resistance": {
+        "common": 1,
+        "uncommon": 1,
+        "rare": 2,
+        "epic": 3,
+        "legendary": 4,
+        "dark": 6
+    },
+    "accuracy": {
+        "common": 1,
+        "uncommon": 1,
+        "rare": 2,
+        "epic": 3,
+        "legendary": 4,
+        "dark": 6
+    },
+}

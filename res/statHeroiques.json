@@ -1,0 +1,2189 @@
+{
+	"heroic_stat_0000": {
+		"heroicStar1": {
+			attack: 10,
+			hp: 50,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			attack: 15,
+			hp: 75,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			attack: 20,
+			hp: 100,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			attack: 25,
+			hp: 125,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			attack: 30,
+			hp: 150,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0001": {
+		"heroicStar1": {
+			defense: 5,
+			hp: 50,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			defense: 10,
+			hp: 75,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			defense: 15,
+			hp: 100,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			defense: 20,
+			hp: 125,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			defense: 25,
+			hp: 150,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0002": {
+		"heroicStar1": {
+			hp: 50,
+			accuracy: 0.01,
+			attack: 10
+		},
+		"heroicStar2": {
+			hp: 75,
+			accuracy: 0.02,
+			attack: 15
+		},
+		"heroicStar3": {
+			hp: 100,
+			accuracy: 0.03,
+			attack: 20
+		},
+		"heroicStar4": {
+			hp: 125,
+			accuracy: 0.04,
+			attack: 25
+		},
+		"heroicStar5": {
+			hp: 150,
+			accuracy: 0.05,
+			attack: 30
+		}
+	},
+	"heroic_stat_0003": {
+		"heroicStar1": {
+			attack: 10,
+			criticalDamage: 1,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			attack: 15,
+			criticalDamage: 2,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			attack: 20,
+			criticalDamage: 5,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			attack: 25,
+			criticalDamage: 7,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			attack: 30,
+			criticalDamage: 10,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0004": {
+		"heroicStar1": {
+			defense: 5,
+			attack: 10,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			defense: 10,
+			attack: 15,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			defense: 15,
+			attack: 20,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			defense: 20,
+			attack: 25,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			defense: 25,
+			attack: 30,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0005": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			hp: 50,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			hp: 75,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			hp: 100,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			hp: 125,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			hp: 150,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0006": {
+		"heroicStar1": {
+			attack: 10,
+			accuracy: 0.01,
+			speed: 0.001
+		},
+		"heroicStar2": {
+			attack: 15,
+			accuracy: 0.02,
+			speed: 0.001
+		},
+		"heroicStar3": {
+			attack: 20,
+			accuracy: 0.03,
+			speed: 0.002
+		},
+		"heroicStar4": {
+			attack: 25,
+			accuracy: 0.04,
+			speed: 0.002
+		},
+		"heroicStar5": {
+			attack: 30,
+			accuracy: 0.05,
+			speed: 0.004
+		}
+	},
+	"heroic_stat_0007": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			resistance: 0.01,
+			defense: 5
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			resistance: 0.02,
+			defense: 10
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			resistance: 0.03,
+			defense: 15
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			resistance: 0.04,
+			defense: 20
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			resistance: 0.05,
+			defense: 25
+		}
+	},
+	"heroic_stat_0008": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0009": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			defense: 5,
+			attack: 10
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			defense: 10,
+			attack: 15
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			defense: 15,
+			attack: 20
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			defense: 20,
+			attack: 25
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			defense: 25,
+			attack: 30
+		}
+	},
+	"heroic_stat_0010": {
+		"heroicStar1": {
+			hp: 50,
+			accuracy: 0.01,
+			defense: 5
+		},
+		"heroicStar2": {
+			hp: 75,
+			accuracy: 0.02,
+			defense: 10
+		},
+		"heroicStar3": {
+			hp: 100,
+			accuracy: 0.03,
+			defense: 15
+		},
+		"heroicStar4": {
+			hp: 125,
+			accuracy: 0.04,
+			defense: 20
+		},
+		"heroicStar5": {
+			hp: 150,
+			accuracy: 0.05,
+			defense: 25
+		}
+	},
+	"heroic_stat_0011": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			hp: 50
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			hp: 75
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			hp: 100
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			hp: 125
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			hp: 150
+		}
+	},
+	"heroic_stat_0012": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			hp: 50,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			hp: 75,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			hp: 100,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			hp: 125,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			hp: 150,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0013": {
+		"heroicStar1": {
+			attack: 10,
+			criticalChance: 1,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			attack: 15,
+			criticalChance: 2,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			attack: 20,
+			criticalChance: 3,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			attack: 25,
+			criticalChance: 4,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			attack: 30,
+			criticalChance: 5,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0014": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			hp: 50,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			hp: 75,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			hp: 100,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			hp: 125,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			hp: 150,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0015": {
+		"heroicStar1": {
+			hp: 50,
+			resistance: 0.01,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			hp: 75,
+			resistance: 0.02,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			hp: 100,
+			resistance: 0.03,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			hp: 125,
+			resistance: 0.04,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			hp: 150,
+			resistance: 0.05,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0016": {
+		"heroicStar1": {
+			hp: 50,
+			accuracy: 0.01,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			accuracy: 0.02,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			accuracy: 0.03,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			accuracy: 0.04,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			accuracy: 0.05,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0017": {
+		"heroicStar1": {
+			attack: 10,
+			speed: 0.001,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			attack: 15,
+			speed: 0.001,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			attack: 20,
+			speed: 0.002,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			attack: 25,
+			speed: 0.002,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			attack: 30,
+			speed: 0.004,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0018": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			speed: 0.001,
+			criticalDamage: 1
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			speed: 0.001,
+			criticalDamage: 2
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			speed: 0.002,
+			criticalDamage: 5
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			speed: 0.002,
+			criticalDamage: 7
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			speed: 0.004,
+			criticalDamage: 10
+		}
+	},
+	"heroic_stat_0019": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			speed: 0.001,
+			hp: 50
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			speed: 0.001,
+			hp: 75
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			speed: 0.002,
+			hp: 100
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			speed: 0.002,
+			hp: 125
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			speed: 0.004,
+			hp: 150
+		}
+	},
+	"heroic_stat_0020": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			defense: 5
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			defense: 10
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			defense: 15
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			defense: 20
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			defense: 25
+		}
+	},
+	"heroic_stat_0021": {
+		"heroicStar1": {
+			speed: 0.001,
+			criticalChance: 1,
+			hp: 50
+		},
+		"heroicStar2": {
+			speed: 0.001,
+			criticalChance: 2,
+			hp: 75
+		},
+		"heroicStar3": {
+			speed: 0.002,
+			criticalChance: 3,
+			hp: 100
+		},
+		"heroicStar4": {
+			speed: 0.002,
+			criticalChance: 4,
+			hp: 125
+		},
+		"heroicStar5": {
+			speed: 0.004,
+			criticalChance: 5,
+			hp: 150
+		}
+	},
+	"heroic_stat_0022": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			hp: 50,
+			criticalDamage: 1
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			hp: 75,
+			criticalDamage: 2
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			hp: 100,
+			criticalDamage: 5
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			hp: 125,
+			criticalDamage: 7
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			hp: 150,
+			criticalDamage: 10
+		}
+	},
+	"heroic_stat_0023": {
+		"heroicStar1": {
+			hp: 50,
+			defense: 5,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			defense: 10,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			defense: 15,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			defense: 20,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			defense: 25,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0024": {
+		"heroicStar1": {
+			hp: 50,
+			defense: 5,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			defense: 10,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			defense: 15,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			defense: 20,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			defense: 25,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0025": {
+		"heroicStar1": {
+			hp: 50,
+			defense: 5,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			defense: 10,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			defense: 15,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			defense: 20,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			defense: 25,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0026": {
+		"heroicStar1": {
+			attack: 10,
+			criticalDamage: 1,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			attack: 15,
+			criticalDamage: 2,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			attack: 20,
+			criticalDamage: 5,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			attack: 25,
+			criticalDamage: 7,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			attack: 30,
+			criticalDamage: 10,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0027": {
+		"heroicStar1": {
+			hp: 50,
+			resistance: 0.01,
+			speed: 0.001
+		},
+		"heroicStar2": {
+			hp: 75,
+			resistance: 0.02,
+			speed: 0.001
+		},
+		"heroicStar3": {
+			hp: 100,
+			resistance: 0.03,
+			speed: 0.002
+		},
+		"heroicStar4": {
+			hp: 125,
+			resistance: 0.04,
+			speed: 0.002
+		},
+		"heroicStar5": {
+			hp: 150,
+			resistance: 0.05,
+			speed: 0.004
+		}
+	},
+	"heroic_stat_0028": {
+		"heroicStar1": {
+			hp: 50,
+			defense: 5,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			defense: 10,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			defense: 15,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			defense: 20,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			defense: 25,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0029": {
+		"heroicStar1": {
+			speed: 0.001,
+			resistance: 0.01,
+			hp: 50
+		},
+		"heroicStar2": {
+			speed: 0.001,
+			resistance: 0.02,
+			hp: 75
+		},
+		"heroicStar3": {
+			speed: 0.002,
+			resistance: 0.03,
+			hp: 100
+		},
+		"heroicStar4": {
+			speed: 0.002,
+			resistance: 0.04,
+			hp: 125
+		},
+		"heroicStar5": {
+			speed: 0.004,
+			resistance: 0.05,
+			hp: 150
+		}
+	},
+	"heroic_stat_0030": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			speed: 0.001,
+			attack: 10
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			speed: 0.001,
+			attack: 15
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			speed: 0.002,
+			attack: 20
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			speed: 0.002,
+			attack: 25
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			speed: 0.004,
+			attack: 30
+		}
+	},
+	"heroic_stat_0031": {
+		"heroicStar1": {
+			resistance: 0.01,
+			accuracy: 0.01,
+			hp: 50
+		},
+		"heroicStar2": {
+			resistance: 0.02,
+			accuracy: 0.02,
+			hp: 75
+		},
+		"heroicStar3": {
+			resistance: 0.03,
+			accuracy: 0.03,
+			hp: 100
+		},
+		"heroicStar4": {
+			resistance: 0.04,
+			accuracy: 0.04,
+			hp: 125
+		},
+		"heroicStar5": {
+			resistance: 0.05,
+			accuracy: 0.05,
+			hp: 150
+		}
+	},
+	"heroic_stat_0032": {
+		"heroicStar1": {
+			criticalChance: 1,
+			hp: 50,
+			defense: 5
+		},
+		"heroicStar2": {
+			criticalChance: 2,
+			hp: 75,
+			defense: 10
+		},
+		"heroicStar3": {
+			criticalChance: 3,
+			hp: 100,
+			defense: 15
+		},
+		"heroicStar4": {
+			criticalChance: 4,
+			hp: 125,
+			defense: 20
+		},
+		"heroicStar5": {
+			criticalChance: 5,
+			hp: 150,
+			defense: 25
+		}
+	},
+	"heroic_stat_0033": {
+		"heroicStar1": {
+			resistance: 0.01,
+			criticalDamage: 1,
+			attack: 10
+		},
+		"heroicStar2": {
+			resistance: 0.02,
+			criticalDamage: 2,
+			attack: 15
+		},
+		"heroicStar3": {
+			resistance: 0.03,
+			criticalDamage: 5,
+			attack: 20
+		},
+		"heroicStar4": {
+			resistance: 0.04,
+			criticalDamage: 7,
+			attack: 25
+		},
+		"heroicStar5": {
+			resistance: 0.05,
+			criticalDamage: 10,
+			attack: 30
+		}
+	},
+	"heroic_stat_0034": {
+		"heroicStar1": {
+			defense: 5,
+			attack: 10,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			defense: 10,
+			attack: 15,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			defense: 15,
+			attack: 20,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			defense: 20,
+			attack: 25,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			defense: 25,
+			attack: 30,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0035": {
+		"heroicStar1": {
+			hp: 50,
+			attack: 10,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			hp: 75,
+			attack: 15,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			hp: 100,
+			attack: 20,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			hp: 125,
+			attack: 25,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			hp: 150,
+			attack: 30,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0036": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			criticalChance: 1,
+			hp: 50
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			criticalChance: 2,
+			hp: 75
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			criticalChance: 3,
+			hp: 100
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			criticalChance: 4,
+			hp: 125
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			criticalChance: 5,
+			hp: 150
+		}
+	},
+	"heroic_stat_0037": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			speed: 0.001
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			speed: 0.001
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			speed: 0.002
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			speed: 0.002
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			speed: 0.004
+		}
+	},
+	"heroic_stat_0038": {
+		"heroicStar1": {
+			resistance: 0.01,
+			defense: 5,
+			speed: 0.001
+		},
+		"heroicStar2": {
+			resistance: 0.02,
+			defense: 10,
+			speed: 0.001
+		},
+		"heroicStar3": {
+			resistance: 0.03,
+			defense: 15,
+			speed: 0.002
+		},
+		"heroicStar4": {
+			resistance: 0.04,
+			defense: 20,
+			speed: 0.002
+		},
+		"heroicStar5": {
+			resistance: 0.05,
+			defense: 25,
+			speed: 0.004
+		}
+	},
+	"heroic_stat_0039": {
+		"heroicStar1": {
+			attack: 10,
+			criticalDamage: 1,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			attack: 15,
+			criticalDamage: 2,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			attack: 20,
+			criticalDamage: 5,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			attack: 25,
+			criticalDamage: 7,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			attack: 30,
+			criticalDamage: 10,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0040": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			speed: 0.001
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			speed: 0.001
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			speed: 0.002
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			speed: 0.002
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			speed: 0.004
+		}
+	},
+	"heroic_stat_0041": {
+		"heroicStar1": {
+			speed: 0.001,
+			criticalChance: 1,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			speed: 0.001,
+			criticalChance: 2,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			speed: 0.002,
+			criticalChance: 3,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			speed: 0.002,
+			criticalChance: 4,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			speed: 0.004,
+			criticalChance: 5,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0042": {
+		"heroicStar1": {
+			defense: 5,
+			hp: 50,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			defense: 10,
+			hp: 75,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			defense: 15,
+			hp: 100,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			defense: 20,
+			hp: 125,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			defense: 25,
+			hp: 150,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0043": {
+		"heroicStar1": {
+			defense: 5,
+			resistance: 0.01,
+			hp: 50
+		},
+		"heroicStar2": {
+			defense: 10,
+			resistance: 0.02,
+			hp: 75
+		},
+		"heroicStar3": {
+			defense: 15,
+			resistance: 0.03,
+			hp: 100
+		},
+		"heroicStar4": {
+			defense: 20,
+			resistance: 0.04,
+			hp: 125
+		},
+		"heroicStar5": {
+			defense: 25,
+			resistance: 0.05,
+			hp: 150
+		}
+	},
+	"heroic_stat_0044": {
+		"heroicStar1": {
+			resistance: 0.01,
+			hp: 50,
+			attack: 10
+		},
+		"heroicStar2": {
+			resistance: 0.02,
+			hp: 75,
+			attack: 15
+		},
+		"heroicStar3": {
+			resistance: 0.03,
+			hp: 100,
+			attack: 20
+		},
+		"heroicStar4": {
+			resistance: 0.04,
+			hp: 125,
+			attack: 25
+		},
+		"heroicStar5": {
+			resistance: 0.05,
+			hp: 150,
+			attack: 30
+		}
+	},
+	"heroic_stat_0045": {
+		"heroicStar1": {
+			attack: 10,
+			criticalChance: 1,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			attack: 15,
+			criticalChance: 2,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			attack: 20,
+			criticalChance: 3,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			attack: 25,
+			criticalChance: 4,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			attack: 30,
+			criticalChance: 5,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0046": {
+		"heroicStar1": {
+			resistance: 0.01,
+			hp: 50,
+			defense: 5
+		},
+		"heroicStar2": {
+			resistance: 0.02,
+			hp: 75,
+			defense: 10
+		},
+		"heroicStar3": {
+			resistance: 0.03,
+			hp: 100,
+			defense: 15
+		},
+		"heroicStar4": {
+			resistance: 0.04,
+			hp: 125,
+			defense: 20
+		},
+		"heroicStar5": {
+			resistance: 0.05,
+			hp: 150,
+			defense: 25
+		}
+	},
+	"heroic_stat_0047": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0048": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			hp: 50
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			hp: 75
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			hp: 100
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			hp: 125
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			hp: 150
+		}
+	},
+	"heroic_stat_0049": {
+		"heroicStar1": {
+			hp: 50,
+			defense: 5,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			defense: 10,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			defense: 15,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			defense: 20,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			defense: 25,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0050": {
+		"heroicStar1": {
+			criticalDamage: 1,
+			attack: 10,
+			criticalChance: 1
+		},
+		"heroicStar2": {
+			criticalDamage: 2,
+			attack: 15,
+			criticalChance: 2
+		},
+		"heroicStar3": {
+			criticalDamage: 5,
+			attack: 20,
+			criticalChance: 3
+		},
+		"heroicStar4": {
+			criticalDamage: 7,
+			attack: 25,
+			criticalChance: 4
+		},
+		"heroicStar5": {
+			criticalDamage: 10,
+			attack: 30,
+			criticalChance: 5
+		}
+	},
+	"heroic_stat_0051": {
+		"heroicStar1": {
+			resistance: 0.01,
+			accuracy: 0.01,
+			defense: 5
+		},
+		"heroicStar2": {
+			resistance: 0.02,
+			accuracy: 0.02,
+			defense: 10
+		},
+		"heroicStar3": {
+			resistance: 0.03,
+			accuracy: 0.03,
+			defense: 15
+		},
+		"heroicStar4": {
+			resistance: 0.04,
+			accuracy: 0.04,
+			defense: 20
+		},
+		"heroicStar5": {
+			resistance: 0.05,
+			accuracy: 0.05,
+			defense: 25
+		}
+	},
+	"heroic_stat_0052": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			hp: 50,
+			attack: 10
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			hp: 75,
+			attack: 15
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			hp: 100,
+			attack: 20
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			hp: 125,
+			attack: 25
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			hp: 150,
+			attack: 30
+		}
+	},
+	"heroic_stat_0053": {
+		"heroicStar1": {
+			hp: 50,
+			accuracy: 0.01,
+			defense: 5
+		},
+		"heroicStar2": {
+			hp: 75,
+			accuracy: 0.02,
+			defense: 10
+		},
+		"heroicStar3": {
+			hp: 100,
+			accuracy: 0.03,
+			defense: 15
+		},
+		"heroicStar4": {
+			hp: 125,
+			accuracy: 0.04,
+			defense: 20
+		},
+		"heroicStar5": {
+			hp: 150,
+			accuracy: 0.05,
+			defense: 25
+		}
+	},
+	"heroic_stat_0054": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			criticalChance: 1,
+			attack: 10
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			criticalChance: 2,
+			attack: 15
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			criticalChance: 3,
+			attack: 20
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			criticalChance: 4,
+			attack: 25
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			criticalChance: 5,
+			attack: 30
+		}
+	},
+	"heroic_stat_0055": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			criticalDamage: 1,
+			defense: 5
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			criticalDamage: 2,
+			defense: 10
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			criticalDamage: 5,
+			defense: 15
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			criticalDamage: 7,
+			defense: 20
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			criticalDamage: 10,
+			defense: 25
+		}
+	},
+	"heroic_stat_0056": {
+		"heroicStar1": {
+			criticalDamage: 1,
+			criticalChance: 1,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			criticalDamage: 2,
+			criticalChance: 2,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			criticalDamage: 5,
+			criticalChance: 3,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			criticalDamage: 7,
+			criticalChance: 4,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			criticalDamage: 10,
+			criticalChance: 5,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0057": {
+		"heroicStar1": {
+			attack: 10,
+			accuracy: 0.01,
+			defense: 5
+		},
+		"heroicStar2": {
+			attack: 15,
+			accuracy: 0.02,
+			defense: 10
+		},
+		"heroicStar3": {
+			attack: 20,
+			accuracy: 0.03,
+			defense: 15
+		},
+		"heroicStar4": {
+			attack: 25,
+			accuracy: 0.04,
+			defense: 20
+		},
+		"heroicStar5": {
+			attack: 30,
+			accuracy: 0.05,
+			defense: 25
+		}
+	},
+	"heroic_stat_0058": {
+		"heroicStar1": {
+			defense: 5,
+			resistance: 0.01,
+			hp: 50
+		},
+		"heroicStar2": {
+			defense: 10,
+			resistance: 0.02,
+			hp: 75
+		},
+		"heroicStar3": {
+			defense: 15,
+			resistance: 0.03,
+			hp: 100
+		},
+		"heroicStar4": {
+			defense: 20,
+			resistance: 0.04,
+			hp: 125
+		},
+		"heroicStar5": {
+			defense: 25,
+			resistance: 0.05,
+			hp: 150
+		}
+	},
+	"heroic_stat_0059": {
+		"heroicStar1": {
+			defense: 5,
+			hp: 50,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			defense: 10,
+			hp: 75,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			defense: 15,
+			hp: 100,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			defense: 20,
+			hp: 125,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			defense: 25,
+			hp: 150,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0060": {
+		"heroicStar1": {
+			attack: 10,
+			criticalChance: 1,
+			criticalDamage: 1
+		},
+		"heroicStar2": {
+			attack: 15,
+			criticalChance: 2,
+			criticalDamage: 2
+		},
+		"heroicStar3": {
+			attack: 20,
+			criticalChance: 3,
+			criticalDamage: 5
+		},
+		"heroicStar4": {
+			attack: 25,
+			criticalChance: 4,
+			criticalDamage: 7
+		},
+		"heroicStar5": {
+			attack: 30,
+			criticalChance: 5,
+			criticalDamage: 10
+		}
+	},
+	"heroic_stat_0061": {
+		"heroicStar1": {
+			hp: 50,
+			resistance: 0.01,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			resistance: 0.02,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			resistance: 0.03,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			resistance: 0.04,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			resistance: 0.05,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0062": {
+		"heroicStar1": {
+			resistance: 0.01,
+			defense: 5,
+			hp: 50
+		},
+		"heroicStar2": {
+			resistance: 0.02,
+			defense: 10,
+			hp: 75
+		},
+		"heroicStar3": {
+			resistance: 0.03,
+			defense: 15,
+			hp: 100
+		},
+		"heroicStar4": {
+			resistance: 0.04,
+			defense: 20,
+			hp: 125
+		},
+		"heroicStar5": {
+			resistance: 0.05,
+			defense: 25,
+			hp: 150
+		}
+	},
+	"heroic_stat_0063": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			criticalChance: 1,
+			speed: 0.001
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			criticalChance: 2,
+			speed: 0.001
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			criticalChance: 3,
+			speed: 0.002
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			criticalChance: 4,
+			speed: 0.002
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			criticalChance: 5,
+			speed: 0.004
+		}
+	},
+	"heroic_stat_0064": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			criticalDamage: 1,
+			hp: 50
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			criticalDamage: 2,
+			hp: 75
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			criticalDamage: 5,
+			hp: 100
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			criticalDamage: 7,
+			hp: 125
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			criticalDamage: 10,
+			hp: 150
+		}
+	},
+	"heroic_stat_0065": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			defense: 5
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			defense: 10
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			defense: 15
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			defense: 20
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			defense: 25
+		}
+	},
+	"heroic_stat_0066": {
+		"heroicStar1": {
+			hp: 50,
+			attack: 10,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			attack: 15,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			attack: 20,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			attack: 25,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			attack: 30,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0067": {
+		"heroicStar1": {
+			hp: 50,
+			attack: 10,
+			defense: 5
+		},
+		"heroicStar2": {
+			hp: 75,
+			attack: 15,
+			defense: 10
+		},
+		"heroicStar3": {
+			hp: 100,
+			attack: 20,
+			defense: 15
+		},
+		"heroicStar4": {
+			hp: 125,
+			attack: 25,
+			defense: 20
+		},
+		"heroicStar5": {
+			hp: 150,
+			attack: 30,
+			defense: 25
+		}
+	},
+	"heroic_stat_0068": {
+		"heroicStar1": {
+			resistance: 0.01,
+			accuracy: 0.01,
+			speed: 0.001
+		},
+		"heroicStar2": {
+			resistance: 0.02,
+			accuracy: 0.02,
+			speed: 0.001
+		},
+		"heroicStar3": {
+			resistance: 0.03,
+			accuracy: 0.03,
+			speed: 0.002
+		},
+		"heroicStar4": {
+			resistance: 0.04,
+			accuracy: 0.04,
+			speed: 0.002
+		},
+		"heroicStar5": {
+			resistance: 0.05,
+			accuracy: 0.05,
+			speed: 0.004
+		}
+	},
+	"heroic_stat_0069": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			hp: 50,
+			attack: 10
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			hp: 75,
+			attack: 15
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			hp: 100,
+			attack: 20
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			hp: 125,
+			attack: 25
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			hp: 150,
+			attack: 30
+		}
+	},
+	"heroic_stat_0070": {
+		"heroicStar1": {
+			hp: 50,
+			resistance: 0.01,
+			defense: 5
+		},
+		"heroicStar2": {
+			hp: 75,
+			resistance: 0.02,
+			defense: 10
+		},
+		"heroicStar3": {
+			hp: 100,
+			resistance: 0.03,
+			defense: 15
+		},
+		"heroicStar4": {
+			hp: 125,
+			resistance: 0.04,
+			defense: 20
+		},
+		"heroicStar5": {
+			hp: 150,
+			resistance: 0.05,
+			defense: 25
+		}
+	},
+	"heroic_stat_0071": {
+		"heroicStar1": {
+			hp: 50,
+			accuracy: 0.01,
+			resistance: 0.01
+		},
+		"heroicStar2": {
+			hp: 75,
+			accuracy: 0.02,
+			resistance: 0.02
+		},
+		"heroicStar3": {
+			hp: 100,
+			accuracy: 0.03,
+			resistance: 0.03
+		},
+		"heroicStar4": {
+			hp: 125,
+			accuracy: 0.04,
+			resistance: 0.04
+		},
+		"heroicStar5": {
+			hp: 150,
+			accuracy: 0.05,
+			resistance: 0.05
+		}
+	},
+	"heroic_stat_0072": {
+		"heroicStar1": {
+			attack: 10,
+			resistance: 0.01,
+			accuracy: 0.01
+		},
+		"heroicStar2": {
+			attack: 15,
+			resistance: 0.02,
+			accuracy: 0.02
+		},
+		"heroicStar3": {
+			attack: 20,
+			resistance: 0.03,
+			accuracy: 0.03
+		},
+		"heroicStar4": {
+			attack: 25,
+			resistance: 0.04,
+			accuracy: 0.04
+		},
+		"heroicStar5": {
+			attack: 30,
+			resistance: 0.05,
+			accuracy: 0.05
+		}
+	},
+	"heroic_stat_0073": {
+		"heroicStar1": {
+			attack: 10,
+			criticalChance: 1,
+			criticalDamage: 1
+		},
+		"heroicStar2": {
+			attack: 15,
+			criticalChance: 2,
+			criticalDamage: 2
+		},
+		"heroicStar3": {
+			attack: 20,
+			criticalChance: 3,
+			criticalDamage: 5
+		},
+		"heroicStar4": {
+			attack: 25,
+			criticalChance: 4,
+			criticalDamage: 7
+		},
+		"heroicStar5": {
+			attack: 30,
+			criticalChance: 5,
+			criticalDamage: 10
+		}
+	},
+	"heroic_stat_0074": {
+		"heroicStar1": {
+			attack: 10,
+			hp: 50,
+			defense: 5
+		},
+		"heroicStar2": {
+			attack: 15,
+			hp: 75,
+			defense: 10
+		},
+		"heroicStar3": {
+			attack: 20,
+			hp: 100,
+			defense: 15
+		},
+		"heroicStar4": {
+			attack: 25,
+			hp: 125,
+			defense: 20
+		},
+		"heroicStar5": {
+			attack: 30,
+			hp: 150,
+			defense: 25
+		}
+	},
+	"heroic_stat_0075": {
+		"heroicStar1": {
+			attack: 10,
+			accuracy: 0.01,
+			defense: 5
+		},
+		"heroicStar2": {
+			attack: 15,
+			accuracy: 0.02,
+			defense: 10
+		},
+		"heroicStar3": {
+			attack: 20,
+			accuracy: 0.03,
+			defense: 15
+		},
+		"heroicStar4": {
+			attack: 25,
+			accuracy: 0.04,
+			defense: 20
+		},
+		"heroicStar5": {
+			attack: 30,
+			accuracy: 0.05,
+			defense: 25
+		}
+	},
+	"heroic_stat_0076": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			defense: 5
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			defense: 10
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			defense: 15
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			defense: 20
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			defense: 25
+		}
+	},
+	"heroic_stat_0077": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			defense: 5
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			defense: 10
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			defense: 15
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			defense: 20
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			defense: 25
+		}
+	},
+	"heroic_stat_0078": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			resistance: 0.01,
+			hp: 50
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			resistance: 0.02,
+			hp: 75
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			resistance: 0.03,
+			hp: 100
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			resistance: 0.04,
+			hp: 125
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			resistance: 0.05,
+			hp: 150
+		}
+	},
+	"heroic_stat_0079": {
+		"heroicStar1": {
+			defense: 5,
+			resistance: 0.01,
+			hp: 50
+		},
+		"heroicStar2": {
+			defense: 10,
+			resistance: 0.02,
+			hp: 75
+		},
+		"heroicStar3": {
+			defense: 15,
+			resistance: 0.03,
+			hp: 100
+		},
+		"heroicStar4": {
+			defense: 20,
+			resistance: 0.04,
+			hp: 125
+		},
+		"heroicStar5": {
+			defense: 25,
+			resistance: 0.05,
+			hp: 150
+		}
+	},
+	"heroic_stat_0080": {
+		"heroicStar1": {
+			accuracy: 0.01,
+			attack: 10,
+			defense: 5
+		},
+		"heroicStar2": {
+			accuracy: 0.02,
+			attack: 15,
+			defense: 10
+		},
+		"heroicStar3": {
+			accuracy: 0.03,
+			attack: 20,
+			defense: 15
+		},
+		"heroicStar4": {
+			accuracy: 0.04,
+			attack: 25,
+			defense: 20
+		},
+		"heroicStar5": {
+			accuracy: 0.05,
+			attack: 30,
+			defense: 25
+		}
+	}
+}

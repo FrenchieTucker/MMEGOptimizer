@@ -18,13 +18,35 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include "MMEGOptimizer_ctrl.h"
+#include "gzFileExtractor.h"
+
+#include <QtWidgets/QFileDialog>
+#include <QtCore/QString>
+
+#include <iostream>
 
 MMEGOptimizer_ctrl::MMEGOptimizer_ctrl()
     : m_wdg(new MMEGOptimizer_wdg)
 {
+    QObject::connect(m_wdg.get(), &MMEGOptimizer_wdg::importDemande, [this](){importerFichier();});
 }
 
 void MMEGOptimizer_ctrl::show()
 {
     m_wdg->show();
+}
+
+void MMEGOptimizer_ctrl::importerFichier()
+{
+    //std::cout << "MMEGOptimizer_ctrl::importerFichier" << std::endl;
+    QString fileName = QFileDialog::getOpenFileName(nullptr,
+                                                    QObject::tr("Open File"),
+                                                    QString(),
+                                                    QObject::tr("Archive (*.gz)"));
+    if(fileName.isEmpty())
+        return;
+
+    std::cout << "fichier à importer : " << fileName.toUtf8().constData() << std::endl;
+    QString content = extractInfosFromFile(fileName.toUtf8().constData());
+    std::cout << "contenu : [" << content.toUtf8().constData() << "]" << std::endl;
 }

@@ -27,11 +27,21 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     MMEGOptimizer_ctrl.cpp \
+    MMEGOptimizer_wdg.cpp \
+    gzFileExtractor.cpp \
+    gzFileExtractor.cpp \
+    main.cpp \
+    MMEGOptimizer_ctrl.cpp \
     MMEGOptimizer_wdg.cpp
 
 HEADERS += \
     MMEGOptimizer_ctrl.h \
-    MMEGOptimizer_wdg.h
+    MMEGOptimizer_wdg.h \
+    zlib/include/zconf.h \
+    zlib/include/zlib.h \
+    MMEGOptimizer_ctrl.h \
+    MMEGOptimizer_wdg.h \
+    gzFileExtractor.h
 
 FORMS += \
         MMEGOptimizer.ui
@@ -40,3 +50,10 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+
+win32: LIBS += -L$$PWD/zlib/lib/ -lz
+
+INCLUDEPATH += $$PWD/zlib/include
+DEPENDPATH += $$PWD/zlib/include
+

@@ -33,6 +33,8 @@ public:
     void show();
 
 private:
+    void importerFichier();
+
     std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
 };
 

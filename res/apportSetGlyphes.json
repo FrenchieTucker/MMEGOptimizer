@@ -1,0 +1,15 @@
+/* Ce fichier a pour but de recenser les apports des différents Sets sur les stats du mob */
+{
+    "vitality":    ["hp%",             20],
+    "strength":    ["attack%",         20],
+    "frenzy":      ["criticalChance%", 10],
+    "destruction": ["criticalDamage%", 30],
+    "haste":       ["speed",           0.01],
+    "precision":   ["accuracy",        0.2],
+    "defense":     ["defense%",        20],
+    "endurance":   ["resistance",      0.2],
+    "immunity":    ["",                ""],
+    "meditation":  ["",                ""],
+    "life steal":  ["",                ""],
+    "appeasement": ["",                ""]
+}
