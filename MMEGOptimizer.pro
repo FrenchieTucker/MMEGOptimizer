@@ -27,12 +27,15 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     MMEGOptimizer_ctrl.cpp \
-    MMEGOptimizer_wdg.cpp
+    MMEGOptimizer_wdg.cpp \
+    Creature.cpp
 
 HEADERS += \
     MMEGOptimizer_ctrl.h \
     MMEGOptimizer_wdg.h \
-    extractionProcess.h
+    extractionProcess.h \
+    Creature.h \
+    global.h
 
 FORMS += \
         MMEGOptimizer.ui

@@ -19,20 +19,22 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "MMEGOptimizer_ctrl.h"
 #include "extractionProcess.h"
+#include "Creature.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
 
 #include <QtCore/QString>
-#include <QtCore/QProcess>
+
 #include <QtCore/QJsonDocument>
 #include <QtCore/QJsonObject>
+#include <QtCore/QJsonArray>
+#include <QtCore/QJsonValue>
 
 #include <iostream>
 
 MMEGOptimizer_ctrl::MMEGOptimizer_ctrl()
-    : m_infosMdl()
-    , m_wdg(new MMEGOptimizer_wdg(m_infosMdl))
+    : m_wdg(new MMEGOptimizer_wdg)
 {
     QObject::connect(m_wdg.get(), &MMEGOptimizer_wdg::importDemande, [this](){importerFichier();});
 }
@@ -69,17 +71,7 @@ void MMEGOptimizer_ctrl::importerFichier()
 
 void MMEGOptimizer_ctrl::fillModels(QString content)
 {
-    //std::cout << "fillModels [" << content.size() << "]" << std::endl;
     QJsonDocument main{QJsonDocument::fromJson(content.toUtf8())};
-    if(main.isNull())
-        std::cout << "Document null" << std::endl;
-    if(main.isArray())
-        std::cout << "Document array" << std::endl;
-    if(main.isEmpty())
-        std::cout << "Document empty" << std::endl;
-    if(main.isObject())
-        std::cout << "Document object" << std::endl;
-
     if(!main.isObject()) {
         std::cerr << "Erreur de lecture du fichier" << std::endl;
         return;
@@ -104,47 +96,55 @@ void MMEGOptimizer_ctrl::fillModels(QString content)
     }
 }
 
+#define TEST_JSONVALUE(X)                                              \
+    do{                                                                \
+        std::cout << __FUNCTION__ << " - BEGIN" << std::endl;          \
+        if(!val.is ## X()) {                                           \
+            std::cerr << __FUNCTION__ << ": not an ## X" << std::endl; \
+            return;                                                    \
+        }                                                              \
+    }while(false)
+
 void MMEGOptimizer_ctrl::fillCreatures(QJsonValue val)
 {
-    std::cout << __FUNCTION__ << " - BEGIN" << std::endl;
-    if(!val.isArray()) {
-        std::cerr << __FUNCTION__ << ": not an array" << std::endl;
-        return;
+    TEST_JSONVALUE(Array);
+
+    for(QJsonValue v : val.toArray()) {
+        fillCreature(v);
+    }
+}
+
+void MMEGOptimizer_ctrl::fillCreature(QJsonValue val)
+{
+    TEST_JSONVALUE(Object);
+
+    try{
+        m_creatures.append(new Creature(val));
+    }
+    catch(QString key) {
+        std::cerr << "clé inconnue : " << key.toUtf8().constData() << std::endl;
+    }
+    catch(...) {
+        std::cerr << "erreur inconnue" << std::endl;
     }
 }
 
 void MMEGOptimizer_ctrl::fillGuild(QJsonValue val)
 {
-    std::cout << __FUNCTION__ << " - BEGIN" << std::endl;
-    if(!val.isObject()) {
-        std::cerr << __FUNCTION__ << ": not an object" << std::endl;
-        return;
-    }
+    TEST_JSONVALUE(Object);
 }
 
 void MMEGOptimizer_ctrl::fillProfile(QJsonValue val)
 {
-    std::cout << __FUNCTION__ << " - BEGIN" << std::endl;
-    if(!val.isObject()) {
-        std::cerr << __FUNCTION__ << ": not an object" << std::endl;
-        return;
-    }
+    TEST_JSONVALUE(Object);
 }
 
 void MMEGOptimizer_ctrl::fillRunes(QJsonValue val)
 {
-    std::cout << __FUNCTION__ << " - BEGIN" << std::endl;
-    if(!val.isArray()) {
-        std::cerr << __FUNCTION__ << ": not an array" << std::endl;
-        return;
-    }
+    TEST_JSONVALUE(Array);
 }
 
 void MMEGOptimizer_ctrl::fillVersion(QJsonValue val)
 {
-    std::cout << __FUNCTION__ << " - BEGIN" << std::endl;
-    if(!val.isString()) {
-        std::cerr << __FUNCTION__ << ": not a string" << std::endl;
-        return;
-    }
+    TEST_JSONVALUE(String);
 }
