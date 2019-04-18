@@ -20,6 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "MMEGOptimizer_ctrl.h"
 #include "extractionProcess.h"
 #include "Creature.h"
+#include "global.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
@@ -96,19 +97,9 @@ void MMEGOptimizer_ctrl::fillModels(QString content)
     }
 }
 
-#define TEST_JSONVALUE(X)                                              \
-    do{                                                                \
-        std::cout << __FUNCTION__ << " - BEGIN" << std::endl;          \
-        if(!val.is ## X()) {                                           \
-            std::cerr << __FUNCTION__ << ": not an ## X" << std::endl; \
-            return;                                                    \
-        }                                                              \
-    }while(false)
-
 void MMEGOptimizer_ctrl::fillCreatures(QJsonValue val)
 {
     TEST_JSONVALUE(Array);
-
     for(QJsonValue v : val.toArray()) {
         fillCreature(v);
     }
@@ -117,7 +108,6 @@ void MMEGOptimizer_ctrl::fillCreatures(QJsonValue val)
 void MMEGOptimizer_ctrl::fillCreature(QJsonValue val)
 {
     TEST_JSONVALUE(Object);
-
     try{
         m_creatures.append(new Creature(val));
     }
@@ -132,6 +122,7 @@ void MMEGOptimizer_ctrl::fillCreature(QJsonValue val)
 void MMEGOptimizer_ctrl::fillGuild(QJsonValue val)
 {
     TEST_JSONVALUE(Object);
+    m_guild.update(val);
 }
 
 void MMEGOptimizer_ctrl::fillProfile(QJsonValue val)
@@ -147,4 +138,5 @@ void MMEGOptimizer_ctrl::fillRunes(QJsonValue val)
 void MMEGOptimizer_ctrl::fillVersion(QJsonValue val)
 {
     TEST_JSONVALUE(String);
+    m_version = static_cast<unsigned int>(val.toInt(0));
 }

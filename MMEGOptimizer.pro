@@ -25,14 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    Guild.cpp \
+    Profile.cpp \
+    global.cpp \
         main.cpp \
     MMEGOptimizer_ctrl.cpp \
     MMEGOptimizer_wdg.cpp \
     Creature.cpp
 
 HEADERS += \
+    Guild.h \
     MMEGOptimizer_ctrl.h \
     MMEGOptimizer_wdg.h \
+    Profile.h \
     extractionProcess.h \
     Creature.h \
     global.h

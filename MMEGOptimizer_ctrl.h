@@ -23,6 +23,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include <memory>
 
 #include "MMEGOptimizer_wdg.h"
+#include "Guild.h"
 
 #include <QtGui/QStandardItemModel>
 #include <QtCore/QList>
@@ -50,6 +51,8 @@ private:
 
     std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
     QList<Creature*> m_creatures;
+    Guild m_guild;
+    unsigned int m_version{0};
 };
 
 #endif // MMEGOPTIMIZER_CTRL_H
