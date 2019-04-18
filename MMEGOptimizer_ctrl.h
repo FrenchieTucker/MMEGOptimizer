@@ -24,6 +24,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "MMEGOptimizer_wdg.h"
 #include "Guild.h"
+#include "Profile.h"
 
 #include <QtGui/QStandardItemModel>
 #include <QtCore/QList>
@@ -52,6 +53,7 @@ private:
     std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
     QList<Creature*> m_creatures;
     Guild m_guild;
+    Profile m_profile;
     unsigned int m_version{0};
 };
 

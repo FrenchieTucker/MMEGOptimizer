@@ -5,7 +5,12 @@
 #include <QtCore/QJsonObject>
 #include <QtCore/QStringList>
 
-Guild::Guild() {}
+Guild::Guild()
+    : m_id(0)
+    , m_name()
+    , m_rank(0)
+    , m_role()
+{}
 
 void Guild::update(QJsonValue val)
 {

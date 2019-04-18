@@ -60,6 +60,7 @@ void MMEGOptimizer_ctrl::importerFichier()
     try{
         QString content = extractInfos(fileName);
         fillModels(content);
+        QMessageBox::information(nullptr, "Import", "Import fini.", QMessageBox::Ok);
     }
     catch(...) {
         QMessageBox::warning(nullptr,
@@ -128,6 +129,7 @@ void MMEGOptimizer_ctrl::fillGuild(QJsonValue val)
 void MMEGOptimizer_ctrl::fillProfile(QJsonValue val)
 {
     TEST_JSONVALUE(Object);
+    m_profile.update(val);
 }
 
 void MMEGOptimizer_ctrl::fillRunes(QJsonValue val)
