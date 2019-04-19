@@ -5,13 +5,13 @@
 
 class QString;
 
-#define TEST_JSONVALUE(X)                                              \
-    do{                                                                \
-        /*std::cout << __FUNCTION__ << " - BEGIN" << std::endl;*/          \
-        if(!val.is ## X()) {                                           \
-            std::cerr << __FUNCTION__ << ": not an ## X" << std::endl; \
-            return;                                                    \
-        }                                                              \
+#define TEST_JSONVALUE(X)                                             \
+    do{                                                               \
+        /*std::cout << __FUNCTION__ << " - BEGIN" << std::endl;*/     \
+        if(!val.is ## X()) {                                          \
+            std::cerr << __FUNCTION__ << ": not an " #X << std::endl; \
+            return;                                                   \
+        }                                                             \
     }while(false)
 
 enum class Element{

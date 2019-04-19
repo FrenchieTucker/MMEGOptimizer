@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
     Guild.cpp \
     Profile.cpp \
+    Rune.cpp \
     global.cpp \
         main.cpp \
     MMEGOptimizer_ctrl.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     MMEGOptimizer_ctrl.h \
     MMEGOptimizer_wdg.h \
     Profile.h \
+    Rune.h \
     extractionProcess.h \
     Creature.h \
     global.h

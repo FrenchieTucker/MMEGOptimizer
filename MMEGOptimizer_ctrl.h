@@ -30,6 +30,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include <QtCore/QList>
 
 class Creature;
+class Rune;
 
 class MMEGOptimizer_ctrl
 {
@@ -48,12 +49,14 @@ private:
     void fillGuild(QJsonValue val);
     void fillProfile(QJsonValue val);
     void fillRunes(QJsonValue val);
+    void fillRune(QJsonValue val);
     void fillVersion(QJsonValue val);
 
     std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
     QList<Creature*> m_creatures;
     Guild m_guild;
     Profile m_profile;
+    QList<Rune*> m_runes;
     unsigned int m_version{0};
 };
 

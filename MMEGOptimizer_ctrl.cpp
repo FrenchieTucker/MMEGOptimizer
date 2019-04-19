@@ -20,6 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "MMEGOptimizer_ctrl.h"
 #include "extractionProcess.h"
 #include "Creature.h"
+#include "Rune.h"
 #include "global.h"
 
 #include <QtWidgets/QFileDialog>
@@ -135,6 +136,23 @@ void MMEGOptimizer_ctrl::fillProfile(QJsonValue val)
 void MMEGOptimizer_ctrl::fillRunes(QJsonValue val)
 {
     TEST_JSONVALUE(Array);
+    for(QJsonValue v : val.toArray()) {
+        fillRune(v);
+    }
+}
+
+void MMEGOptimizer_ctrl::fillRune(QJsonValue val)
+{
+    TEST_JSONVALUE(Object);
+    try{
+        m_runes.append(new Rune(val));
+    }
+    catch(QString key) {
+        std::cerr << "clé inconnue : " << key.toUtf8().constData() << std::endl;
+    }
+    catch(...) {
+        std::cerr << "erreur inconnue" << std::endl;
+    }
 }
 
 void MMEGOptimizer_ctrl::fillVersion(QJsonValue val)

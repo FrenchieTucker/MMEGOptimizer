@@ -50,3 +50,63 @@ void Profile::update(QJsonValue val)
             throw key;
     }
 }
+
+void Profile::arenaRank(QJsonValue val)
+{
+    TEST_JSONVALUE(String);
+}
+
+void Profile::books(QJsonValue val)
+{
+    TEST_JSONVALUE(Double);
+}
+
+void Profile::crimsonStones(QJsonValue val)
+{
+    TEST_JSONVALUE(Double);
+}
+
+void Profile::crystals(QJsonValue val)
+{
+    TEST_JSONVALUE(Double);
+}
+
+void Profile::essence(QJsonValue val)
+{
+    TEST_JSONVALUE(Double);
+}
+
+void Profile::evolutionMaterials(QJsonValue val)
+{
+    TEST_JSONVALUE(Object);
+}
+
+void Profile::ink(QJsonValue val)
+{
+    TEST_JSONVALUE(Double);
+}
+
+void Profile::level(QJsonValue val)
+{
+    TEST_JSONVALUE(Double);
+}
+
+void Profile::magicHouse(QJsonValue val)
+{
+    TEST_JSONVALUE(String);
+}
+
+void Profile::name(QJsonValue val)
+{
+    TEST_JSONVALUE(String);
+}
+
+void Profile::reputationPoints(QJsonValue val)
+{
+    TEST_JSONVALUE(Double);
+}
+
+void Profile::staffSkills(QJsonValue val)
+{
+    TEST_JSONVALUE(Object);
+}
