@@ -18,10 +18,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include "MMEGOptimizer_ctrl.h"
+
+#include "global.h"
 #include "extractionProcess.h"
+
 #include "Creature.h"
 #include "Rune.h"
-#include "global.h"
+#include "AuraSkillUp.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
@@ -73,7 +76,7 @@ void MMEGOptimizer_ctrl::recupererDonneesApportSetGlyphes()
     auto data = getDataFromJsonFile("res/apportSetGlyphes.json");
     QJsonDocument main{QJsonDocument::fromJson(data)};
     if(!main.isObject()) {
-        std::cerr << "Erreur de lecture du fichier" << std::endl;
+        std::cerr << "Erreur de lecture du fichier apportSetGlyphes.json" << std::endl;
         return;
     }
     QJsonObject o = main.object();
@@ -109,6 +112,22 @@ void MMEGOptimizer_ctrl::recupererDonneesApportSetGlyphes()
 void MMEGOptimizer_ctrl::recupererDonneesAugmentationAura()
 {
     auto data = getDataFromJsonFile("res/augmentationAura.json");
+    QJsonDocument main{QJsonDocument::fromJson(data)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier augmentationAura.json" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        try {
+            bool ok;
+            uint value = key.right(4).toUInt(&ok);
+            m_augmentationAura.insert(ok? value: (!m_augmentationAura.isEmpty()? m_augmentationAura.lastKey()+1: 0), new AuraSkillUp(o.value(key)));
+        } catch (QString msg) {
+            std::cerr << "<cle=" << key.toUtf8().constData() << "> " << msg.toUtf8().constData() << std::endl;
+        }
+    }
 }
 
 void MMEGOptimizer_ctrl::recupererDonneesCreaturesNomParId()

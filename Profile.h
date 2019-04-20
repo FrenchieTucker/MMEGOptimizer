@@ -53,4 +53,4 @@ class Profile
         QStringList m_staffSkills;
 };
 
-#endif
+#endif // PROFILE_H

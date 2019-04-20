@@ -1,5 +1,5 @@
-#ifndef CREATURE
-#define CREATURE
+#ifndef CREATURE_H
+#define CREATURE_H
 
 
 #include <QtCore/QString>
@@ -40,4 +40,4 @@ class Creature
         unsigned int m_xp;
 };
 
-#endif // CREATURE
+#endif // CREATURE_H
