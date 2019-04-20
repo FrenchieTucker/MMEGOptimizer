@@ -26,6 +26,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
 
+#include <QtCore/QFile>
+
 #include <QtCore/QString>
 
 #include <QtCore/QJsonDocument>
@@ -38,8 +40,117 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 MMEGOptimizer_ctrl::MMEGOptimizer_ctrl()
     : m_wdg(new MMEGOptimizer_wdg)
 {
+    initialiserDonneesStatiques();
+
     QObject::connect(m_wdg.get(), &MMEGOptimizer_wdg::importDemande, [this](){importerFichier();});
 }
+
+void MMEGOptimizer_ctrl::initialiserDonneesStatiques()
+{
+    recupererDonneesApportSetGlyphes();
+    recupererDonneesAugmentationAura();
+    recupererDonneesCreaturesNomParId();
+    recupererDonneesDefinitionAura();
+    recupererDonneesElementTraduction();
+    recupererDonneesLibelleAura();
+    recupererDonneesProcGlypheParSubstat();
+    recupererDonneesStatHeroiques();
+    recupererDonneesStatsCreaturesBases();
+    recupererDonneesStatsGlyphesParNiveau();
+}
+
+QByteArray getDataFromJsonFile(QString fileName)
+{
+    QFile file(fileName);
+    if(!file.open(QIODevice::ReadOnly))
+        return QByteArray();
+
+    return file.readAll();
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesApportSetGlyphes()
+{
+    auto data = getDataFromJsonFile("res/apportSetGlyphes.json");
+    QJsonDocument main{QJsonDocument::fromJson(data)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        QJsonValue val = o.value(key);
+        if(!val.isArray()) {
+            std::cerr << "Erreur sur la cle '" << key.toUtf8().constData() << "'" << std::endl;
+            continue;
+        }
+        QJsonArray apports = val.toArray();
+
+        QJsonValue firstAttr = apports.first();
+        if(!firstAttr.isString()) {
+            std::cerr << "Erreur sur le 1er element de la cle '" << key.toUtf8().constData() << "'" << std::endl;
+            continue;
+        }
+        QString attr = firstAttr.toString();
+        if(attr.isEmpty()) {
+            m_apportSetGlyphes.insert(key, qMakePair(QString(), 0.));
+            continue;
+        }
+
+        QJsonValue lastAttr = apports.last();
+        if(!lastAttr.isDouble()) {
+            std::cerr << "Erreur sur le 2eme element de la cle '" << key.toUtf8().constData() << "'" << std::endl;
+            continue;
+        }
+        m_apportSetGlyphes.insert(key, qMakePair(attr, lastAttr.toDouble()));
+    }
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesAugmentationAura()
+{
+    auto data = getDataFromJsonFile("res/augmentationAura.json");
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesCreaturesNomParId()
+{
+    auto data = getDataFromJsonFile("res/creaturesNomParId.en.json");
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesDefinitionAura()
+{
+    auto data = getDataFromJsonFile("res/definitionAura.json");
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesElementTraduction()
+{
+    auto data = getDataFromJsonFile("res/elementTraduction.json");
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesLibelleAura()
+{
+    auto data = getDataFromJsonFile("res/libelleAura.json");
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesProcGlypheParSubstat()
+{
+    auto data = getDataFromJsonFile("res/procGlypheParSubstat.json");
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesStatHeroiques()
+{
+    auto data = getDataFromJsonFile("res/statHeroiques.json");
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesStatsCreaturesBases()
+{
+    auto data = getDataFromJsonFile("res/statsCreaturesBases.json");
+}
+
+void MMEGOptimizer_ctrl::recupererDonneesStatsGlyphesParNiveau()
+{
+    auto data = getDataFromJsonFile("res/statsGlyphesParNiveau.json");
+}
+
 
 void MMEGOptimizer_ctrl::show()
 {

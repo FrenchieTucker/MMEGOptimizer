@@ -1,4 +1,3 @@
-/* Ce fichier a pour but de recenser les apports des différents Sets sur les stats du mob */
 {
     "vitality":    ["hp%",             20],
     "strength":    ["attack%",         20],

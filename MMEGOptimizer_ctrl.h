@@ -26,8 +26,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "Guild.h"
 #include "Profile.h"
 
-#include <QtGui/QStandardItemModel>
 #include <QtCore/QList>
+#include <QtCore/QHash>
 
 class Creature;
 class Rune;
@@ -41,6 +41,22 @@ public:
     void show();
 
 private:
+    std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
+
+    void initialiserDonneesStatiques();
+    void recupererDonneesApportSetGlyphes();
+    void recupererDonneesAugmentationAura();
+    void recupererDonneesCreaturesNomParId();
+    void recupererDonneesDefinitionAura();
+    void recupererDonneesElementTraduction();
+    void recupererDonneesLibelleAura();
+    void recupererDonneesProcGlypheParSubstat();
+    void recupererDonneesStatHeroiques();
+    void recupererDonneesStatsCreaturesBases();
+    void recupererDonneesStatsGlyphesParNiveau();
+
+    QHash<QString, QPair<QString, double>> m_apportSetGlyphes;
+
     void importerFichier();
     void fillModels(QString content);
 
@@ -52,7 +68,6 @@ private:
     void fillRune(QJsonValue val);
     void fillVersion(QJsonValue val);
 
-    std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
     QList<Creature*> m_creatures;
     Guild m_guild;
     Profile m_profile;
