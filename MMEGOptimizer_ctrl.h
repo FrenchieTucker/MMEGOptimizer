@@ -58,6 +58,7 @@ private:
 
     QHash<QString, QPair<QString, double>> m_apportSetGlyphes;
     QMap<unsigned int, AuraSkillUp*> m_augmentationAura;
+    QMap<unsigned int, QString> m_nomparId;
 
     void importerFichier();
     void fillModels(QString content);

@@ -133,6 +133,23 @@ void MMEGOptimizer_ctrl::recupererDonneesAugmentationAura()
 void MMEGOptimizer_ctrl::recupererDonneesCreaturesNomParId()
 {
     auto data = getDataFromJsonFile("res/creaturesNomParId.en.json");
+    QJsonDocument main{QJsonDocument::fromJson(data)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier creaturesNomParId.en.json" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        QJsonValue val = o.value(key);
+        if(!val.isString()) {
+            std::cerr << "Erreur sur la valeur associée à l'attribut '" << key.toUtf8().constData() << "'" << std::endl;
+            continue;
+        }
+        bool ok;
+        uint value = key.section('_', 3).toUInt(&ok);
+        m_nomparId.insert(ok? value: (!m_nomparId.isEmpty()? m_nomparId.lastKey()+1: 1), val.toString());
+    }
 }
 
 void MMEGOptimizer_ctrl::recupererDonneesDefinitionAura()
