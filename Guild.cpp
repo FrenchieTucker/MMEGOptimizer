@@ -25,7 +25,7 @@ void Guild::update(QJsonValue val)
         else if(key == "role")
             role(obj.value("role"));
         else
-            throw key;
+            throw key + " [" + __FUNCTION__ + "]";
     }
 }
 

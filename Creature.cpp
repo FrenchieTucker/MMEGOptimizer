@@ -36,7 +36,7 @@ Creature::Creature(QJsonValue val)
         else if(key == "xp")
             xp(obj.value("xp"));
         else
-            throw key;
+            throw key + " [" + __FUNCTION__ + "]";
     }
 }
 

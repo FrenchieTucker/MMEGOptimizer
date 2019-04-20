@@ -1,14 +1,21 @@
 #ifndef RUNE_H
 #define RUNE_H
 
+#include "global.h"
+
 #include <QtCore/QString>
 #include <QtCore/QList>
 
 class QJsonValue;
 
-class Attribute
+class Stat
 {
     public:
+        Stat(QString, QJsonValue);
+
+    private:
+        StatAttribute m_statAttr{StatAttribute::UNDEFINED};
+        double m_value{0.};
 };
 
 class Rune
@@ -34,8 +41,8 @@ class Rune
         QString m_main;
         QString m_rarity;
         QString m_shape;
-        QString m_idName;
-        QList<Attribute*> m_stats;
+        QString m_sku;
+        QList<Stat*> m_stats;
         QString m_type;
         double m_value;
 };

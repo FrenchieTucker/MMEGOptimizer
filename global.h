@@ -24,4 +24,21 @@ enum class Element{
 
 Element convertElement(QString _element);
 
+enum class StatAttribute{
+    UNDEFINED,
+    ACCURACY,
+    ATTACK,
+    ATTACK_PERCENT,
+    CRITICAL_CHANCE,
+    CRITICAL_DAMAGE,
+    DEFENSE,
+    DEFENSE_PERCENT,
+    HEALTH_POINTS,
+    HEALTH_POINTS_PERCENT,
+    RESISTANCE,
+    SPEED
+};
+
+StatAttribute convertStatAttribute(QString _element);
+
 #endif // GLOBAL_H

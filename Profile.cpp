@@ -47,7 +47,7 @@ void Profile::update(QJsonValue val)
         else if(key == "staffSkills")
             staffSkills(obj.value("staffSkills"));
         else
-            throw key;
+            throw key + " [" + __FUNCTION__ + "]";
     }
 }
 

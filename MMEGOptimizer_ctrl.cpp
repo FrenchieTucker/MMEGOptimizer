@@ -114,7 +114,7 @@ void MMEGOptimizer_ctrl::fillCreature(QJsonValue val)
         m_creatures.append(new Creature(val));
     }
     catch(QString key) {
-        std::cerr << "clé inconnue : " << key.toUtf8().constData() << std::endl;
+        std::cerr << "cle inconnue : " << key.toUtf8().constData() << std::endl;
     }
     catch(...) {
         std::cerr << "erreur inconnue" << std::endl;
@@ -148,7 +148,7 @@ void MMEGOptimizer_ctrl::fillRune(QJsonValue val)
         m_runes.append(new Rune(val));
     }
     catch(QString key) {
-        std::cerr << "clé inconnue : " << key.toUtf8().constData() << std::endl;
+        std::cerr << "cle inconnue : " << key.toUtf8().constData() << std::endl;
     }
     catch(...) {
         std::cerr << "erreur inconnue" << std::endl;
