@@ -180,7 +180,30 @@ void MMEGOptimizer_ctrl::recupererDonneesDefinitionAura()
 
 void MMEGOptimizer_ctrl::recupererDonneesElementTraduction()
 {
-    auto data = getDataFromJsonFile("res/elementTraduction.json");
+    auto data = getDataFromJsonFile("res/elementTraduction.fr.json");
+    QJsonParseError err;
+    QJsonDocument main{QJsonDocument::fromJson(data, &err)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier elementTraduction.fr.json ["
+                  << err.errorString().toUtf8().constData()
+                  << "] [-31,32]=[" << data.mid(err.offset -31, 64).constData() << "]" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        try {
+            QJsonValue val = o.value(key);
+            if(!val.isString()) {
+                std::cerr << "la valeur associee a la cle '" << key.toUtf8().constData() << "' n'est pas une chaine de caracteres";
+                continue;
+            }
+            m_elementsTraduits.insert(key, val.toString());
+        }
+        catch(QString msg) {
+            std::cerr << "<cle=" << key.toUtf8().constData() << "> " << msg.toUtf8().constData() << std::endl;
+        }
+    }
 }
 
 void MMEGOptimizer_ctrl::recupererDonneesLibelleAura()

@@ -61,6 +61,7 @@ private:
     QMap<unsigned int, AuraSkillUp*> m_augmentationAura;
     QMap<unsigned int, QString> m_nomparId;
     QMap<unsigned int, AuraBase*> m_auraBases;
+    QMap<QString, QString> m_elementsTraduits;
 
     void importerFichier();
     void fillModels(QString content);
