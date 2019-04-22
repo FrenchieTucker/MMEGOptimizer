@@ -32,6 +32,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 class Creature;
 class Rune;
 class AuraSkillUp;
+class AuraBase;
 
 class MMEGOptimizer_ctrl
 {
@@ -59,6 +60,7 @@ private:
     QHash<QString, QPair<QString, double>> m_apportSetGlyphes;
     QMap<unsigned int, AuraSkillUp*> m_augmentationAura;
     QMap<unsigned int, QString> m_nomparId;
+    QMap<unsigned int, AuraBase*> m_auraBases;
 
     void importerFichier();
     void fillModels(QString content);

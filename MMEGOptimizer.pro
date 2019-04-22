@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    AuraBase.cpp \
     AuraSkillUp.cpp \
     Guild.cpp \
     Profile.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
     Creature.cpp
 
 HEADERS += \
+    AuraBase.h \
     AuraSkillUp.h \
     Guild.h \
     MMEGOptimizer_ctrl.h \

@@ -25,6 +25,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "Creature.h"
 #include "Rune.h"
 #include "AuraSkillUp.h"
+#include "AuraBase.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
@@ -154,7 +155,27 @@ void MMEGOptimizer_ctrl::recupererDonneesCreaturesNomParId()
 
 void MMEGOptimizer_ctrl::recupererDonneesDefinitionAura()
 {
-    auto data = getDataFromJsonFile("res/definitionAura.json");
+    QByteArray data = getDataFromJsonFile("res/definitionAura.json");
+    QJsonParseError err;
+    QJsonDocument main{QJsonDocument::fromJson(data, &err)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier definitionAura.json ["
+                  << err.errorString().toUtf8().constData()
+                  << "] [-31,32]=[" << data.mid(err.offset -31, 64).constData() << "]" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        try {
+            bool ok;
+            uint value = key.section('_', 1).toUInt(&ok);
+            m_auraBases.insert(ok? value: (!m_auraBases.isEmpty()? m_auraBases.lastKey()+1: 0), new AuraBase(o.value(key)));
+        }
+        catch(QString msg) {
+            std::cerr << "<cle=" << key.toUtf8().constData() << "> " << msg.toUtf8().constData() << std::endl;
+        }
+    }
 }
 
 void MMEGOptimizer_ctrl::recupererDonneesElementTraduction()
