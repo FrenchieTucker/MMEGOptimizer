@@ -62,6 +62,7 @@ private:
     QMap<unsigned int, QString> m_nomparId;
     QMap<unsigned int, AuraBase*> m_auraBases;
     QMap<QString, QString> m_elementsTraduits;
+    QMap<unsigned int, QString> m_libellesAura;
 
     void importerFichier();
     void fillModels(QString content);

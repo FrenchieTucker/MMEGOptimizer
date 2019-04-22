@@ -66,8 +66,14 @@ void MMEGOptimizer_ctrl::initialiserDonneesStatiques()
 QByteArray getDataFromJsonFile(QString fileName)
 {
     QFile file(fileName);
-    if(!file.open(QIODevice::ReadOnly))
+    if(!file.exists()) {
+        std::cerr << "le fichier " << fileName.toUtf8().constData() << " n'existe pas" << std::endl;
         return QByteArray();
+    }
+    if(!file.open(QIODevice::ReadOnly)) {
+        std::cerr << "Impossible d'ouvrir le fichier " << fileName.toUtf8().constData() << std::endl;
+        return QByteArray();
+    }
 
     return file.readAll();
 }
@@ -209,6 +215,33 @@ void MMEGOptimizer_ctrl::recupererDonneesElementTraduction()
 void MMEGOptimizer_ctrl::recupererDonneesLibelleAura()
 {
     auto data = getDataFromJsonFile("res/libelleAura.json");
+    QJsonParseError err;
+    QJsonDocument main{QJsonDocument::fromJson(data, &err)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier libelleAura.json ["
+                  << err.errorString().toUtf8().constData()
+                  << "] [-31,32]=[" << data.mid(err.offset -31, 64).constData() << "]" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        try {
+            QJsonValue val = o.value(key);
+            if(!val.isString()) {
+                std::cerr << "la valeur associee a la cle '" << key.toUtf8().constData() << "' n'est pas une chaine de caracteres";
+                continue;
+            }
+            bool ok;
+            uint value = key.section('_', 3).toUInt(&ok);
+            if(!ok)
+                std::cerr << "Erreur de conversion pour la clé = [" << key.toUtf8().constData() << "]" << std::endl;
+            m_libellesAura.insert(ok? value: (!m_auraBases.isEmpty()? m_auraBases.lastKey()+1: 0), val.toString());
+        }
+        catch(QString msg) {
+            std::cerr << "<cle=" << key.toUtf8().constData() << "> " << msg.toUtf8().constData() << std::endl;
+        }
+    }
 }
 
 void MMEGOptimizer_ctrl::recupererDonneesProcGlypheParSubstat()
