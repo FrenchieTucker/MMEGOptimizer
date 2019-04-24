@@ -28,6 +28,7 @@ SOURCES += \
     AuraBase.cpp \
     AuraSkillUp.cpp \
     Guild.cpp \
+    ProcRuneParSubStat.cpp \
     Profile.cpp \
     Rune.cpp \
     global.cpp \
@@ -42,6 +43,7 @@ HEADERS += \
     Guild.h \
     MMEGOptimizer_ctrl.h \
     MMEGOptimizer_wdg.h \
+    ProcRuneParSubStat.h \
     Profile.h \
     Rune.h \
     extractionProcess.h \

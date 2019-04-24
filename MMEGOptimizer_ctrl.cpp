@@ -26,6 +26,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "Rune.h"
 #include "AuraSkillUp.h"
 #include "AuraBase.h"
+#include "ProcRuneParSubStat.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
@@ -247,6 +248,25 @@ void MMEGOptimizer_ctrl::recupererDonneesLibelleAura()
 void MMEGOptimizer_ctrl::recupererDonneesProcGlypheParSubstat()
 {
     auto data = getDataFromJsonFile("res/procGlypheParSubstat.json");
+    QJsonParseError err;
+    QJsonDocument main{QJsonDocument::fromJson(data, &err)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier procGlypheParSubstat.json ["
+                  << err.errorString().toUtf8().constData() << "] "
+                  << "shift = [" << err.offset << "] "
+                  << " - [-31,32]=[" << data.mid(err.offset -31, 64).constData() << "]" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        try {
+            m_procRuneParSubStat.insert(key, new ProcRuneParSubStat(o.value(key)));
+        }
+        catch(QString msg) {
+            std::cerr << "<cle=" << key.toUtf8().constData() << "> " << msg.toUtf8().constData() << std::endl;
+        }
+    }
 }
 
 void MMEGOptimizer_ctrl::recupererDonneesStatHeroiques()

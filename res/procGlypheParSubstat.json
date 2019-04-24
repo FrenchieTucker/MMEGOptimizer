@@ -1,4 +1,3 @@
-/* Ce fichier contient la liste de tous les procs max possible selon le type et la rereté */
 {
    "speed": {
         "common": 1,
@@ -87,5 +86,5 @@
         "epic": 3,
         "legendary": 4,
         "dark": 6
-    },
+    }
 }

@@ -41,4 +41,16 @@ enum class StatAttribute{
 
 StatAttribute convertStatAttribute(QString _element);
 
+enum class ProcRune{
+    UNDEFINED,
+    COMMON,
+    UNCOMMON,
+    RARE,
+    EPIC,
+    LEGENDARY,
+    DARK
+};
+
+ProcRune convertProcRune(QString _rarete);
+
 #endif // GLOBAL_H

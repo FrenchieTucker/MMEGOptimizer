@@ -43,3 +43,21 @@ StatAttribute convertStatAttribute(QString _attribute)
     else
         throw _attribute + " [" + __FUNCTION__ + "]";
 }
+
+ProcRune convertProcRune(QString _rarete)
+{
+    if(_rarete == "common")
+        return ProcRune::COMMON;
+    else if(_rarete == "uncommon")
+        return ProcRune::UNCOMMON;
+    else if(_rarete == "rare")
+        return ProcRune::RARE;
+    else if(_rarete == "epic")
+        return ProcRune::EPIC;
+    else if(_rarete == "legendary")
+        return ProcRune::LEGENDARY;
+    else if(_rarete == "dark")
+        return ProcRune::DARK;
+    else
+        throw _rarete + " [" + __FUNCTION__ + "]";
+}
