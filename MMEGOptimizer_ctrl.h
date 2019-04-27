@@ -34,6 +34,7 @@ class Rune;
 class AuraSkillUp;
 class AuraBase;
 class ProcRuneParSubStat;
+class HeroicStat;
 
 class MMEGOptimizer_ctrl
 {
@@ -65,6 +66,7 @@ private:
     QMap<QString, QString> m_elementsTraduits;
     QMap<unsigned int, QString> m_libellesAura;
     QMap<QString, ProcRuneParSubStat*> m_procRuneParSubStat;
+    QMap<unsigned int, HeroicStat*> m_heroicStat;
 
     void importerFichier();
     void fillModels(QString content);

@@ -27,6 +27,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "AuraSkillUp.h"
 #include "AuraBase.h"
 #include "ProcRuneParSubStat.h"
+#include "HeroicStat.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
@@ -272,6 +273,26 @@ void MMEGOptimizer_ctrl::recupererDonneesProcGlypheParSubstat()
 void MMEGOptimizer_ctrl::recupererDonneesStatHeroiques()
 {
     auto data = getDataFromJsonFile("res/statHeroiques.json");
+    QJsonParseError err;
+    QJsonDocument main{QJsonDocument::fromJson(data, &err)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier statHeroiques.json ["
+                  << err.errorString().toUtf8().constData()
+                  << "] [-31,32]=[" << data.mid(err.offset -31, 64).constData() << "]" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        try {
+            bool ok;
+            uint value = key.section('_', 2).toUInt(&ok);
+            m_heroicStat.insert(ok? value: (!m_heroicStat.isEmpty()? m_heroicStat.lastKey()+1: 0), new HeroicStat(o.value(key)));
+        }
+        catch(QString msg) {
+            std::cerr << "<cle=" << key.toUtf8().constData() << "> " << msg.toUtf8().constData() << std::endl;
+        }
+    }
 }
 
 void MMEGOptimizer_ctrl::recupererDonneesStatsCreaturesBases()
