@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
     AuraBase.cpp \
     AuraSkillUp.cpp \
+    CreatureBaseStat.cpp \
     Guild.cpp \
     HeroicStat.cpp \
     ProcRuneParSubStat.cpp \
@@ -41,6 +42,7 @@ SOURCES += \
 HEADERS += \
     AuraBase.h \
     AuraSkillUp.h \
+    CreatureBaseStat.h \
     Guild.h \
     HeroicStat.h \
     MMEGOptimizer_ctrl.h \

@@ -35,6 +35,14 @@ class AuraSkillUp;
 class AuraBase;
 class ProcRuneParSubStat;
 class HeroicStat;
+class CreatureBaseStat;
+
+enum class Element;
+
+struct CreatureId {
+    unsigned int id;
+    Element el;
+};
 
 class MMEGOptimizer_ctrl
 {
@@ -67,6 +75,7 @@ private:
     QMap<unsigned int, QString> m_libellesAura;
     QMap<QString, ProcRuneParSubStat*> m_procRuneParSubStat;
     QMap<unsigned int, HeroicStat*> m_heroicStat;
+    QMap<CreatureId, CreatureBaseStat*> m_creatureBaseStat;
 
     void importerFichier();
     void fillModels(QString content);

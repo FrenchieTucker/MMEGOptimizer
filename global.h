@@ -5,11 +5,14 @@
 
 class QString;
 
+const unsigned int ANDROID_ID = 1000000;
+const unsigned int    SIRI_ID = 1000001;
+
 #define TEST_JSONVALUE(X)                                             \
     do{                                                               \
         /*std::cout << __FUNCTION__ << " - BEGIN" << std::endl;*/     \
         if(!val.is ## X()) {                                          \
-            std::cerr << __FUNCTION__ << ": not an " #X << std::endl; \
+            std::cerr << __FUNCTION__ << ": not a " #X " QJsonValue" << std::endl; \
             return;                                                   \
         }                                                             \
     }while(false)

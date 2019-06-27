@@ -28,6 +28,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "AuraBase.h"
 #include "ProcRuneParSubStat.h"
 #include "HeroicStat.h"
+#include "CreatureBaseStat.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
@@ -42,6 +43,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include <QtCore/QJsonValue>
 
 #include <iostream>
+
+bool operator<(const CreatureId& ci1, const CreatureId& ci2) {
+    return ci1.id < ci2.id;
+}
 
 MMEGOptimizer_ctrl::MMEGOptimizer_ctrl()
     : m_wdg(new MMEGOptimizer_wdg)
@@ -298,6 +303,38 @@ void MMEGOptimizer_ctrl::recupererDonneesStatHeroiques()
 void MMEGOptimizer_ctrl::recupererDonneesStatsCreaturesBases()
 {
     auto data = getDataFromJsonFile("res/statsCreaturesBases.json");
+    QJsonParseError err;
+    QJsonDocument main{QJsonDocument::fromJson(data, &err)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier statHeroiques.json ["
+                  << err.errorString().toUtf8().constData()
+                  << "] [-31,32]=[" << data.mid(err.offset -31, 64).constData() << "]" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
+        try {
+            if(key == "TID_ANDROID_CREATURE earth") {
+                m_creatureBaseStat.insert({ANDROID_ID, Element::Earth}, new CreatureBaseStat(o.value(key)));
+                continue;
+            }
+            else if(key == "TID_SIRI_CREATURE fire") {
+                m_creatureBaseStat.insert({SIRI_ID, Element::Fire}, new CreatureBaseStat(o.value(key)));
+                continue;
+            }
+            CreatureId ci;
+            QStringList infos = key.split(" ");
+            bool ok;
+            uint value = infos.at(0).section('_', 3).toUInt(&ok);
+            ci.id = ok? value: (!m_creatureBaseStat.isEmpty()? m_creatureBaseStat.lastKey().id+1: 0);
+            ci.el = convertElement(infos.at(1));
+            m_creatureBaseStat.insert(ci, new CreatureBaseStat(o.value(key)));
+        }
+        catch(QString msg) {
+            std::cerr << "<cle=" << key.toUtf8().constData() << "> " << msg.toUtf8().constData() << std::endl;
+        }
+    }
 }
 
 void MMEGOptimizer_ctrl::recupererDonneesStatsGlyphesParNiveau()
