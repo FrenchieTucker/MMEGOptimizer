@@ -90,11 +90,21 @@ private:
     void fillRune(QJsonValue val);
     void fillVersion(QJsonValue val);
 
+    void validateData();
+
+    // Current User Data
     QList<Creature*> m_creatures;
     Guild m_guild;
     Profile m_profile;
     QList<Rune*> m_runes;
-    unsigned int m_version{0};
+    QString m_version;
+
+    // Temporary User Data
+    QList<Creature*> m_tempCreatures;
+    Guild m_tempGuild;
+    Profile m_tempProfile;
+    QList<Rune*> m_tempRunes;
+    QString m_tempVersion;
 };
 
 #endif // MMEGOPTIMIZER_CTRL_H

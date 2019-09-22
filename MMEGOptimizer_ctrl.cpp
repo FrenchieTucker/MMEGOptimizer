@@ -392,22 +392,28 @@ void MMEGOptimizer_ctrl::fillModels(QString content)
     }
 
     QJsonObject o = main.object();
-    for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
-        if(key == "creatures") {
-            fillCreatures(o.value(key));
-        } else if(key == "guild") {
-            fillGuild(o.value(key));
-        } else if(key == "profile") {
-            fillProfile(o.value(key));
-        } else if(key == "runes") {
-            fillRunes(o.value(key));
-        } else if(key == "version") {
-            fillVersion(o.value(key));
-        } else {
-            std::cerr << "la cle " << key.toUtf8().constData() << " est inconnue." << std::endl;
+    try {
+        for(QString key : o.keys()) {
+            if(key == "creatures") {
+                fillCreatures(o.value(key));
+            } else if(key == "guild") {
+                fillGuild(o.value(key));
+            } else if(key == "profile") {
+                fillProfile(o.value(key));
+            } else if(key == "runes") {
+                fillRunes(o.value(key));
+            } else if(key == "version") {
+                fillVersion(o.value(key));
+            } else {
+                std::cerr << "la cle " << key.toUtf8().constData() << " est inconnue." << std::endl;
+            }
         }
     }
+    catch(...) {
+        return;
+    }
+
+    validateData();
 }
 
 void MMEGOptimizer_ctrl::fillCreatures(QJsonValue val)
@@ -422,26 +428,28 @@ void MMEGOptimizer_ctrl::fillCreature(QJsonValue val)
 {
     TEST_JSONVALUE(Object);
     try{
-        m_creatures.append(new Creature(val));
+        m_tempCreatures.append(new Creature(val));
     }
     catch(QString key) {
         std::cerr << "cle inconnue : " << key.toUtf8().constData() << std::endl;
+        throw;
     }
     catch(...) {
         std::cerr << "erreur inconnue" << std::endl;
+        throw;
     }
 }
 
 void MMEGOptimizer_ctrl::fillGuild(QJsonValue val)
 {
     TEST_JSONVALUE(Object);
-    m_guild.update(val);
+    m_tempGuild.update(val);
 }
 
 void MMEGOptimizer_ctrl::fillProfile(QJsonValue val)
 {
     TEST_JSONVALUE(Object);
-    m_profile.update(val);
+    m_tempProfile.update(val);
 }
 
 void MMEGOptimizer_ctrl::fillRunes(QJsonValue val)
@@ -456,18 +464,39 @@ void MMEGOptimizer_ctrl::fillRune(QJsonValue val)
 {
     TEST_JSONVALUE(Object);
     try{
-        m_runes.append(new Rune(val));
+        m_tempRunes.append(new Rune(val));
     }
     catch(QString key) {
         std::cerr << "cle inconnue : " << key.toUtf8().constData() << std::endl;
+        throw;
     }
     catch(...) {
         std::cerr << "erreur inconnue" << std::endl;
+        throw;
     }
 }
 
 void MMEGOptimizer_ctrl::fillVersion(QJsonValue val)
 {
     TEST_JSONVALUE(String);
-    m_version = static_cast<unsigned int>(val.toInt(0));
+    m_tempVersion = val.toString();
+}
+
+void MMEGOptimizer_ctrl::validateData()
+{
+    if(!m_creatures.isEmpty()) {
+        qDeleteAll(m_creatures);
+        m_creatures.clear();
+    }
+    m_creatures = m_tempCreatures;
+
+    if(!m_runes.isEmpty()) {
+        qDeleteAll(m_runes);
+        m_runes.clear();
+    }
+    m_runes = m_tempRunes;
+
+    m_guild = m_tempGuild;
+    m_profile = m_tempProfile;
+    m_version = m_tempVersion;
 }

@@ -18,6 +18,24 @@ void EvolutionMaterials::update(QJsonValue val)
 
 Profile::Profile() {}
 
+Profile& Profile::operator=(const Profile& p)
+{
+    m_arenaRank = p.m_arenaRank;
+    m_books = p.m_books;
+    m_crimsonStones = p.m_crimsonStones;
+    m_crystals = p.m_crystals;
+    m_essence = p.m_essence;
+    m_evolutionMaterials = p.m_evolutionMaterials;
+    m_ink = p.m_ink;
+    m_level = p.m_level;
+    m_magicHouse = p.m_magicHouse;
+    m_name = p.m_name;
+    m_reputationPoints = p.m_reputationPoints;
+    m_staffSkills = p.m_staffSkills;
+
+    return *this;
+}
+
 void Profile::update(QJsonValue val)
 {
     QJsonObject obj = val.toObject();

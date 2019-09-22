@@ -22,6 +22,7 @@ class Profile
 {
     public:
         Profile();
+        Profile& operator=(const Profile&);
 
         void update(QJsonValue);
 
