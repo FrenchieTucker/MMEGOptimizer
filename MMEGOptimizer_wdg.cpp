@@ -17,6 +17,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#include "Guild.h"
+#include "Profile.h"
+#include "Rune.h"
+#include "Creature.h"
+
 #include "MMEGOptimizer_wdg.h"
 
 MMEGOptimizer_wdg::MMEGOptimizer_wdg()
@@ -33,4 +38,26 @@ MMEGOptimizer_wdg::~MMEGOptimizer_wdg()
 void MMEGOptimizer_wdg::show()
 {
     m_wdg.show();
+}
+
+void MMEGOptimizer_wdg::fillCreatures(QList<Creature*>)
+{}
+
+void MMEGOptimizer_wdg::fillGuild(Guild g)
+{
+    m_ui.m_guildIdValue->setText(QString::number(g.id()));
+    m_ui.m_guildNameValue->setText(g.name());
+    m_ui.m_guildRankValue->setText(QString::number(g.rank()));
+    m_ui.m_guildRoleValue->setText(g.role());
+}
+
+void MMEGOptimizer_wdg::fillProfile(Profile)
+{}
+
+void MMEGOptimizer_wdg::fillRunes(QList<Rune*>)
+{}
+
+void MMEGOptimizer_wdg::fillVersion(QString version)
+{
+    m_ui.m_versionValue->setText(version);
 }

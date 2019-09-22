@@ -24,6 +24,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "ui_MMEGOptimizer.h"
 
+class Rune;
+class Profile;
+class Guild;
+class Creature;
+
 class MMEGOptimizer_wdg : public QObject
 {
     Q_OBJECT
@@ -33,6 +38,12 @@ public:
     ~MMEGOptimizer_wdg();
 
     void show();
+
+    void fillCreatures(QList<Creature*>);
+    void fillGuild(Guild);
+    void fillProfile(Profile);
+    void fillRunes(QList<Rune*>);
+    void fillVersion(QString);
 
 signals:
     void importDemande();

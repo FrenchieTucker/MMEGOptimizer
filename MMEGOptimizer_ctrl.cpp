@@ -371,7 +371,7 @@ void MMEGOptimizer_ctrl::importerFichier()
 
     try{
         QString content = extractInfos(fileName);
-        fillModels(content);
+        extractModels(content);
         QMessageBox::information(nullptr, "Import", "Import fini.", QMessageBox::Ok);
     }
     catch(...) {
@@ -383,7 +383,7 @@ void MMEGOptimizer_ctrl::importerFichier()
     }
 }
 
-void MMEGOptimizer_ctrl::fillModels(QString content)
+void MMEGOptimizer_ctrl::extractModels(QString content)
 {
     QJsonDocument main{QJsonDocument::fromJson(content.toUtf8())};
     if(!main.isObject()) {
@@ -395,15 +395,15 @@ void MMEGOptimizer_ctrl::fillModels(QString content)
     try {
         for(QString key : o.keys()) {
             if(key == "creatures") {
-                fillCreatures(o.value(key));
+                extractCreatures(o.value(key));
             } else if(key == "guild") {
-                fillGuild(o.value(key));
+                extractGuild(o.value(key));
             } else if(key == "profile") {
-                fillProfile(o.value(key));
+                extractProfile(o.value(key));
             } else if(key == "runes") {
-                fillRunes(o.value(key));
+                extractRunes(o.value(key));
             } else if(key == "version") {
-                fillVersion(o.value(key));
+                extractVersion(o.value(key));
             } else {
                 std::cerr << "la cle " << key.toUtf8().constData() << " est inconnue." << std::endl;
             }
@@ -416,87 +416,85 @@ void MMEGOptimizer_ctrl::fillModels(QString content)
     validateData();
 }
 
-void MMEGOptimizer_ctrl::fillCreatures(QJsonValue val)
+void MMEGOptimizer_ctrl::extractCreatures(QJsonValue val)
 {
     TEST_JSONVALUE(Array);
-    for(QJsonValue v : val.toArray()) {
-        fillCreature(v);
-    }
-}
-
-void MMEGOptimizer_ctrl::fillCreature(QJsonValue val)
-{
-    TEST_JSONVALUE(Object);
-    try{
-        m_tempCreatures.append(new Creature(val));
-    }
-    catch(QString key) {
-        std::cerr << "cle inconnue : " << key.toUtf8().constData() << std::endl;
-        throw;
-    }
-    catch(...) {
-        std::cerr << "erreur inconnue" << std::endl;
-        throw;
-    }
-}
-
-void MMEGOptimizer_ctrl::fillGuild(QJsonValue val)
-{
-    TEST_JSONVALUE(Object);
-    m_tempGuild.update(val);
-}
-
-void MMEGOptimizer_ctrl::fillProfile(QJsonValue val)
-{
-    TEST_JSONVALUE(Object);
-    m_tempProfile.update(val);
-}
-
-void MMEGOptimizer_ctrl::fillRunes(QJsonValue val)
-{
-    TEST_JSONVALUE(Array);
-    for(QJsonValue v : val.toArray()) {
-        fillRune(v);
-    }
-}
-
-void MMEGOptimizer_ctrl::fillRune(QJsonValue val)
-{
-    TEST_JSONVALUE(Object);
-    try{
-        m_tempRunes.append(new Rune(val));
-    }
-    catch(QString key) {
-        std::cerr << "cle inconnue : " << key.toUtf8().constData() << std::endl;
-        throw;
-    }
-    catch(...) {
-        std::cerr << "erreur inconnue" << std::endl;
-        throw;
-    }
-}
-
-void MMEGOptimizer_ctrl::fillVersion(QJsonValue val)
-{
-    TEST_JSONVALUE(String);
-    m_tempVersion = val.toString();
-}
-
-void MMEGOptimizer_ctrl::validateData()
-{
     if(!m_creatures.isEmpty()) {
         qDeleteAll(m_creatures);
         m_creatures.clear();
     }
-    m_creatures = m_tempCreatures;
+    for(QJsonValue v : val.toArray()) {
+        extractCreature(v);
+    }
+}
 
+void MMEGOptimizer_ctrl::extractCreature(QJsonValue val)
+{
+    TEST_JSONVALUE(Object);
+    try{
+        m_creatures.append(new Creature(val));
+    }
+    catch(QString key) {
+        std::cerr << "cle inconnue : " << key.toUtf8().constData() << std::endl;
+        throw;
+    }
+    catch(...) {
+        std::cerr << "erreur inconnue" << std::endl;
+        throw;
+    }
+}
+
+void MMEGOptimizer_ctrl::extractGuild(QJsonValue val)
+{
+    TEST_JSONVALUE(Object);
+    m_guild.update(val);
+}
+
+void MMEGOptimizer_ctrl::extractProfile(QJsonValue val)
+{
+    TEST_JSONVALUE(Object);
+    m_profile.update(val);
+}
+
+void MMEGOptimizer_ctrl::extractRunes(QJsonValue val)
+{
+    TEST_JSONVALUE(Array);
     if(!m_runes.isEmpty()) {
         qDeleteAll(m_runes);
         m_runes.clear();
     }
-    m_runes = m_tempRunes;
+    for(QJsonValue v : val.toArray()) {
+        extractRune(v);
+    }
+}
 
-    m_guild = m_tempGuild;
-    m_profile = m_tempProfile;
-    m_version = m_tempVersion;
+void MMEGOptimizer_ctrl::extractRune(QJsonValue val)
+{
+    TEST_JSONVALUE(Object);
+    try{
+        m_runes.append(new Rune(val));
+    }
+    catch(QString key) {
+        std::cerr << "cle inconnue : " << key.toUtf8().constData() << std::endl;
+        throw;
+    }
+    catch(...) {
+        std::cerr << "erreur inconnue" << std::endl;
+        throw;
+    }
+}
+
+void MMEGOptimizer_ctrl::extractVersion(QJsonValue val)
+{
+    TEST_JSONVALUE(String);
+    m_version = val.toString();
+}
+
+void MMEGOptimizer_ctrl::validateData()
+{
+    m_wdg->fillCreatures(m_creatures);
+    m_wdg->fillRunes(m_runes);
+    m_wdg->fillGuild(m_guild);
+    m_wdg->fillProfile(m_profile);
+    m_wdg->fillVersion(m_version);
 }

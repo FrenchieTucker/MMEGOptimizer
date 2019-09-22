@@ -14,6 +14,8 @@ class EvolutionMaterials
 
         void update(QJsonValue);
 
+        unsigned int value(QString key, unsigned int defaultValue) { return m_objects.value(key, defaultValue); }
+
     private:
         QHash<QString, unsigned int> m_objects;
 };
@@ -25,6 +27,19 @@ class Profile
         Profile& operator=(const Profile&);
 
         void update(QJsonValue);
+
+        QString arenaRank() const { return m_arenaRank; }
+        unsigned int books() const { return m_books; }
+        unsigned int crimsonStones() const { return m_crimsonStones; }
+        unsigned int crystals() const { return m_crystals; }
+        unsigned int essence() const { return m_essence; }
+        EvolutionMaterials evolutionMaterials() const { return m_evolutionMaterials; }
+        unsigned int ink() const { return m_ink; }
+        unsigned int level() const { return m_level; }
+        QString magicHouse() const { return m_magicHouse; }
+        QString name() const { return m_name; }
+        unsigned int reputationPoints() const { return m_reputationPoints; }
+        QStringList staffSkills() const { return m_staffSkills; }
 
     private:
         void arenaRank(QJsonValue);

@@ -80,31 +80,24 @@ private:
     QMap<QString, PuissanceGlypheParNiveau*> m_glyphesParNiveau;
 
     void importerFichier();
-    void fillModels(QString content);
+    void extractModels(QString content);
 
-    void fillCreatures(QJsonValue val);
-    void fillCreature(QJsonValue val);
-    void fillGuild(QJsonValue val);
-    void fillProfile(QJsonValue val);
-    void fillRunes(QJsonValue val);
-    void fillRune(QJsonValue val);
-    void fillVersion(QJsonValue val);
+    void extractCreatures(QJsonValue val);
+    void extractCreature(QJsonValue val);
+    void extractGuild(QJsonValue val);
+    void extractProfile(QJsonValue val);
+    void extractRunes(QJsonValue val);
+    void extractRune(QJsonValue val);
+    void extractVersion(QJsonValue val);
 
     void validateData();
 
-    // Current User Data
+    // Temporary User Data
     QList<Creature*> m_creatures;
     Guild m_guild;
     Profile m_profile;
     QList<Rune*> m_runes;
     QString m_version;
-
-    // Temporary User Data
-    QList<Creature*> m_tempCreatures;
-    Guild m_tempGuild;
-    Profile m_tempProfile;
-    QList<Rune*> m_tempRunes;
-    QString m_tempVersion;
 };
 
 #endif // MMEGOPTIMIZER_CTRL_H
