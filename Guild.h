@@ -9,7 +9,6 @@ class Guild
 {
     public:
         Guild();
-        Guild& operator=(const Guild&);
 
         void update(QJsonValue);
 

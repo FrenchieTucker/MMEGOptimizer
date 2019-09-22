@@ -12,16 +12,6 @@ Guild::Guild()
     , m_role()
 {}
 
-Guild& Guild::operator=(const Guild& g)
-{
-    m_id = g.m_id;
-    m_name = g.m_name;
-    m_rank = g.m_rank;
-    m_role = g.m_role;
-
-    return *this;
-}
-
 void Guild::update(QJsonValue val)
 {
     QJsonObject obj = val.toObject();

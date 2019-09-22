@@ -51,8 +51,34 @@ void MMEGOptimizer_wdg::fillGuild(Guild g)
     m_ui.m_guildRoleValue->setText(g.role());
 }
 
-void MMEGOptimizer_wdg::fillProfile(Profile)
-{}
+void MMEGOptimizer_wdg::fillProfile(const Profile& p)
+{
+    m_ui.m_nameValue->setText(p.name());
+    m_ui.m_levelValue->setText(QString::number(p.level()));
+    m_ui.m_houseValue->setText(p.magicHouse());
+    m_ui.m_arenaRankValue->setText(p.arenaRank());
+    m_ui.m_crystalsValue->setText(QString::number(p.crystals()));
+    m_ui.m_reputationPointsValue->setText(QString::number(p.reputationPoints()));
+    m_ui.m_booksValue->setText(QString::number(p.books()));
+    m_ui.m_crimsonStonesValue->setText(QString::number(p.crimsonStones()));
+    m_ui.m_essenceValue->setText(QString::number(p.essence()));
+    m_ui.m_inkValue->setText(QString::number(p.ink()));
+
+    m_ui.m_coreMateriaFragmentValue->setText(QString::number(p.evolutionMaterials().value("Core Materia Fragment", 0)));
+    m_ui.m_arcaneMateriaFragmentValue->setText(QString::number(p.evolutionMaterials().value("Arcane Materia Fragment", 0)));
+    m_ui.m_coreAnimaEssenceValue->setText(QString::number(p.evolutionMaterials().value("Core Anima Essence", 0)));
+    m_ui.m_arcaneAnimaEssenceValue->setText(QString::number(p.evolutionMaterials().value("Arcane Anima Essence", 0)));
+    m_ui.m_coreChimeraOilValue->setText(QString::number(p.evolutionMaterials().value("Core Chimera Oil", 0)));
+    m_ui.m_arcaneChimeraOilValue->setText(QString::number(p.evolutionMaterials().value("Arcane Chimera Oil", 0)));
+    m_ui.m_fieryMaterialValue->setText(QString::number(p.evolutionMaterials().value("Fiery Material", 0)));
+    m_ui.m_arcaneFieryMaterialValue->setText(QString::number(p.evolutionMaterials().value("Arcane Fiery Material", 0)));
+    m_ui.m_aerialMaterialValue->setText(QString::number(p.evolutionMaterials().value("Aerial Material", 0)));
+    m_ui.m_arcaneAerialMaterialValue->setText(QString::number(p.evolutionMaterials().value("Arcane Aerial Material", 0)));
+    m_ui.m_glacialMaterialValue->setText(QString::number(p.evolutionMaterials().value("Glacial Material", 0)));
+    m_ui.m_arcaneGlacialMaterialValue->setText(QString::number(p.evolutionMaterials().value("Arcane Glacial Material", 0)));
+    m_ui.m_naturalMaterialValue->setText(QString::number(p.evolutionMaterials().value("Natural Material", 0)));
+    m_ui.m_arcaneNaturalMaterialValue->setText(QString::number(p.evolutionMaterials().value("Arcane Natural Material", 0)));
+}
 
 void MMEGOptimizer_wdg::fillRunes(QList<Rune*>)
 {}

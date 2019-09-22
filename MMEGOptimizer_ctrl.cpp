@@ -410,6 +410,7 @@ void MMEGOptimizer_ctrl::extractModels(QString content)
         }
     }
     catch(...) {
+        std::cerr << "L'extraction des informations dans l'archive n'a pas abouti" << std::endl;
         return;
     }
 

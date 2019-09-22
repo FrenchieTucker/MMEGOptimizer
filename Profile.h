@@ -23,8 +23,7 @@ class EvolutionMaterials
 class Profile
 {
     public:
-        Profile();
-        Profile& operator=(const Profile&);
+        Profile() = default;
 
         void update(QJsonValue);
 
@@ -39,7 +38,7 @@ class Profile
         QString magicHouse() const { return m_magicHouse; }
         QString name() const { return m_name; }
         unsigned int reputationPoints() const { return m_reputationPoints; }
-        QStringList staffSkills() const { return m_staffSkills; }
+        QHash<QString, unsigned int> staffSkills() const { return m_staffSkills; }
 
     private:
         void arenaRank(QJsonValue);
@@ -66,7 +65,7 @@ class Profile
         QString m_magicHouse;
         QString m_name;
         unsigned int m_reputationPoints;
-        QStringList m_staffSkills;
+        QHash<QString, unsigned int> m_staffSkills;
 };
 
 #endif // PROFILE_H

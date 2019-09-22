@@ -41,7 +41,7 @@ public:
 
     void fillCreatures(QList<Creature*>);
     void fillGuild(Guild);
-    void fillProfile(Profile);
+    void fillProfile(const Profile &);
     void fillRunes(QList<Rune*>);
     void fillVersion(QString);
 
