@@ -13,14 +13,75 @@
   <property name="windowTitle">
    <string>MMEG Optimizer</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="m_versionLabel">
+        <property name="text">
+         <string>Version :</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="m_versionValue">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="m_tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="m_profileTab">
+       <attribute name="title">
+        <string>Profil</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="m_guildTab">
+       <attribute name="title">
+        <string>Guilde</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="m_creaturesTab">
+       <attribute name="title">
+        <string>Creatures</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="m_runesTab">
+       <attribute name="title">
+        <string>Glyphes</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>799</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
