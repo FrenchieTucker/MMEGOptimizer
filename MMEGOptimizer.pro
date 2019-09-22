@@ -32,6 +32,7 @@ SOURCES += \
     HeroicStat.cpp \
     ProcRuneParSubStat.cpp \
     Profile.cpp \
+    PuissanceGlypheParNiveau.cpp \
     Rune.cpp \
     global.cpp \
         main.cpp \
@@ -49,6 +50,7 @@ HEADERS += \
     MMEGOptimizer_wdg.h \
     ProcRuneParSubStat.h \
     Profile.h \
+    PuissanceGlypheParNiveau.h \
     Rune.h \
     extractionProcess.h \
     Creature.h \

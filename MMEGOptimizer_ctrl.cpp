@@ -29,6 +29,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "ProcRuneParSubStat.h"
 #include "HeroicStat.h"
 #include "CreatureBaseStat.h"
+#include "PuissanceGlypheParNiveau.h"
 
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
@@ -95,7 +96,6 @@ void MMEGOptimizer_ctrl::recupererDonneesApportSetGlyphes()
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         QJsonValue val = o.value(key);
         if(!val.isArray()) {
             std::cerr << "Erreur sur la cle '" << key.toUtf8().constData() << "'" << std::endl;
@@ -133,7 +133,6 @@ void MMEGOptimizer_ctrl::recupererDonneesAugmentationAura()
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         try {
             bool ok;
             uint value = key.right(4).toUInt(&ok);
@@ -154,7 +153,6 @@ void MMEGOptimizer_ctrl::recupererDonneesCreaturesNomParId()
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         QJsonValue val = o.value(key);
         if(!val.isString()) {
             std::cerr << "Erreur sur la valeur associée à l'attribut '" << key.toUtf8().constData() << "'" << std::endl;
@@ -179,7 +177,6 @@ void MMEGOptimizer_ctrl::recupererDonneesDefinitionAura()
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         try {
             bool ok;
             uint value = key.section('_', 1).toUInt(&ok);
@@ -204,7 +201,6 @@ void MMEGOptimizer_ctrl::recupererDonneesElementTraduction()
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         try {
             QJsonValue val = o.value(key);
             if(!val.isString()) {
@@ -232,7 +228,6 @@ void MMEGOptimizer_ctrl::recupererDonneesLibelleAura()
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         try {
             QJsonValue val = o.value(key);
             if(!val.isString()) {
@@ -265,7 +260,6 @@ void MMEGOptimizer_ctrl::recupererDonneesProcGlypheParSubstat()
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         try {
             m_procRuneParSubStat.insert(key, new ProcRuneParSubStat(o.value(key)));
         }
@@ -288,7 +282,6 @@ void MMEGOptimizer_ctrl::recupererDonneesStatHeroiques()
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         try {
             bool ok;
             uint value = key.section('_', 2).toUInt(&ok);
@@ -306,14 +299,13 @@ void MMEGOptimizer_ctrl::recupererDonneesStatsCreaturesBases()
     QJsonParseError err;
     QJsonDocument main{QJsonDocument::fromJson(data, &err)};
     if(!main.isObject()) {
-        std::cerr << "Erreur de lecture du fichier statHeroiques.json ["
+        std::cerr << "Erreur de lecture du fichier statsCreaturesBases.json ["
                   << err.errorString().toUtf8().constData()
                   << "] [-31,32]=[" << data.mid(err.offset -31, 64).constData() << "]" << std::endl;
         return;
     }
     QJsonObject o = main.object();
     for(QString key : o.keys()) {
-        //std::cout << "value=" << key.toUtf8().constData() << std::endl;
         try {
             if(key == "TID_ANDROID_CREATURE earth") {
                 m_creatureBaseStat.insert({ANDROID_ID, Element::Earth}, new CreatureBaseStat(o.value(key)));
@@ -340,6 +332,23 @@ void MMEGOptimizer_ctrl::recupererDonneesStatsCreaturesBases()
 void MMEGOptimizer_ctrl::recupererDonneesStatsGlyphesParNiveau()
 {
     auto data = getDataFromJsonFile("res/statsGlyphesParNiveau.json");
+    QJsonParseError err;
+    QJsonDocument main{QJsonDocument::fromJson(data, &err)};
+    if(!main.isObject()) {
+        std::cerr << "Erreur de lecture du fichier statsGlyphesParNiveau.json ["
+                  << err.errorString().toUtf8().constData()
+                  << "] [-31,32]=[" << data.mid(err.offset -31, 64).constData() << "]" << std::endl;
+        return;
+    }
+    QJsonObject o = main.object();
+    for(QString key : o.keys()) {
+        try {
+            m_glyphesParNiveau.insert(key, new PuissanceGlypheParNiveau(o.value(key)));
+        }
+        catch(QString msg) {
+            std::cerr << "<cle=" << key.toUtf8().constData() << "> " << msg.toUtf8().constData() << std::endl;
+        }
+    }
 }
 
 

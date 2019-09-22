@@ -36,6 +36,7 @@ class AuraBase;
 class ProcRuneParSubStat;
 class HeroicStat;
 class CreatureBaseStat;
+class PuissanceGlypheParNiveau;
 
 enum class Element;
 
@@ -76,6 +77,7 @@ private:
     QMap<QString, ProcRuneParSubStat*> m_procRuneParSubStat;
     QMap<unsigned int, HeroicStat*> m_heroicStat;
     QMap<CreatureId, CreatureBaseStat*> m_creatureBaseStat;
+    QMap<QString, PuissanceGlypheParNiveau*> m_glyphesParNiveau;
 
     void importerFichier();
     void fillModels(QString content);
