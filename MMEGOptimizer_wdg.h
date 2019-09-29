@@ -30,6 +30,9 @@ class Profile;
 class Guild;
 class Creature;
 class Creature_wdg;
+class CreatureBaseStat;
+
+class MMEGOptimizer_ctrl;
 
 class MMEGOptimizer_wdg : public QObject
 {
@@ -41,12 +44,14 @@ public:
 
     void show();
 
-    void fillCreatures(QList<Creature*>);
-    void fillCreature(Creature* creature);
+    void fillCreatures(QList<Creature*>, MMEGOptimizer_ctrl*);
+    void fillCreature(Creature* creature, CreatureBaseStat* cbs);
     void fillGuild(const Guild &);
     void fillProfile(const Profile &);
     void fillRunes(QList<Rune*>);
     void fillVersion(QString);
+
+    QPixmap pixmap(QString);
 
 signals:
     void importDemande();
@@ -57,6 +62,7 @@ private:
 
     QVBoxLayout* m_creatureLayout;
     QMap<unsigned int, Creature_wdg*> m_creaturesWdgList;
+    QMap<QString, QByteArray> m_urlToData;
 };
 
 #endif // MMEGOPTIMIZER_WDG_H

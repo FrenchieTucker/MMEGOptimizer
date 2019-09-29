@@ -29,6 +29,8 @@ Creature::Creature(QJsonValue val)
             rank(obj.value("rank"));
         else if(key == "runes")
             runes(obj.value("runes"));
+        /*else if(key == "skin")
+            skin(obj.value("skin"));*/
         else if(key == "sku")
             sku(obj.value("sku"));
         else if(key == "spells")

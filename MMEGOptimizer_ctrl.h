@@ -53,6 +53,8 @@ public:
 
     void show();
 
+    CreatureBaseStat* creatureBaseStatById(CreatureId id);
+
 private:
     std::unique_ptr<MMEGOptimizer_wdg> m_wdg;
 

@@ -21,9 +21,14 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "Profile.h"
 #include "Rune.h"
 #include "Creature.h"
-#include "Creature_wdg.h"
+#include "global.h"
 
+#include "Creature_wdg.h"
 #include "MMEGOptimizer_wdg.h"
+#include <QtGui/QPixmap>
+
+#include "MMEGOptimizer_ctrl.h"
+#include "DataDownLoader.h"
 
 MMEGOptimizer_wdg::MMEGOptimizer_wdg()
     : QObject()
@@ -46,15 +51,23 @@ void MMEGOptimizer_wdg::show()
     m_wdg.show();
 }
 
-void MMEGOptimizer_wdg::fillCreatures(QList<Creature*> creatures)
+void MMEGOptimizer_wdg::fillCreatures(QList<Creature*> creatures, MMEGOptimizer_ctrl* ctrl)
 {
     for (Creature* c : creatures) {
-        fillCreature(c);
+        if(!c)
+            continue;
+
+        fillCreature(c, ctrl->creatureBaseStatById(CreatureId{c->id(), c->element()}));
     }
 }
 
-void MMEGOptimizer_wdg::fillCreature(Creature* creature)
+void MMEGOptimizer_wdg::fillCreature(Creature* creature, CreatureBaseStat* cbs)
 {
+    if(!cbs) {
+        std::cerr << "CreatureBaseStat for CreatureId:" << creature->id() << std::endl;
+        return;
+    }
+
     unsigned int creatureId = creature->id();
     if (m_creaturesWdgList.contains(creatureId)) {
         Creature_wdg* c = m_creaturesWdgList.value(creatureId, nullptr);
@@ -62,7 +75,7 @@ void MMEGOptimizer_wdg::fillCreature(Creature* creature)
         return;
     }
 
-    Creature_wdg* c = new Creature_wdg(creature);
+    Creature_wdg* c = new Creature_wdg(creature, cbs, this);
     m_creaturesWdgList.insert(creatureId, c);
     m_creatureLayout->addWidget(c->widget());
 }
@@ -110,4 +123,27 @@ void MMEGOptimizer_wdg::fillRunes(QList<Rune*>)
 void MMEGOptimizer_wdg::fillVersion(QString version)
 {
     m_ui.m_versionValue->setText(version);
+}
+
+QPixmap MMEGOptimizer_wdg::pixmap(QString blob)
+{
+    QPixmap p;
+    if (m_urlToData.contains(blob)) {
+        QByteArray data = m_urlToData.value(blob, QByteArray());
+        if(data.isEmpty())
+            return p;
+        p.loadFromData(data);
+    } else {
+        DataDownloader dd(QUrl{blob});
+        bool downloaded = false;
+        QObject::connect(&dd, &DataDownloader::downloaded, [&downloaded]{downloaded = true;});
+        while(!downloaded) {
+            QApplication::processEvents(QEventLoop::AllEvents, 10);
+        }
+        QByteArray data = dd.downloadedData();
+        p.loadFromData(data);
+        m_urlToData.insert(blob, data);
+    }
+
+    return p;
 }

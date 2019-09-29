@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,6 +29,7 @@ SOURCES += \
     AuraSkillUp.cpp \
     CreatureBaseStat.cpp \
     Creature_wdg.cpp \
+    DataDownLoader.cpp \
     Guild.cpp \
     HeroicStat.cpp \
     ProcRuneParSubStat.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
     AuraSkillUp.h \
     CreatureBaseStat.h \
     Creature_wdg.h \
+    DataDownLoader.h \
     Guild.h \
     HeroicStat.h \
     MMEGOptimizer_ctrl.h \

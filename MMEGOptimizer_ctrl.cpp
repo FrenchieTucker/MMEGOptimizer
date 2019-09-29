@@ -493,9 +493,14 @@ void MMEGOptimizer_ctrl::extractVersion(QJsonValue val)
 
 void MMEGOptimizer_ctrl::validateData()
 {
-    m_wdg->fillCreatures(m_creatures);
+    m_wdg->fillCreatures(m_creatures, this);
     m_wdg->fillRunes(m_runes);
     m_wdg->fillGuild(m_guild);
     m_wdg->fillProfile(m_profile);
     m_wdg->fillVersion(m_version);
+}
+
+CreatureBaseStat* MMEGOptimizer_ctrl::creatureBaseStatById(CreatureId id)
+{
+    return m_creatureBaseStat.value(id, nullptr);
 }

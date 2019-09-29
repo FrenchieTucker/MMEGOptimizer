@@ -7,7 +7,7 @@ Element convertElement(QString _element)
     if(_element == "fire")
         return Element::Fire;
     else if(_element == "water")
-        return Element::Fire;
+        return Element::Water;
     else if(_element == "air")
         return Element::Air;
     else if(_element == "earth")
