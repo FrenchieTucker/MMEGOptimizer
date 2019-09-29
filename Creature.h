@@ -14,6 +14,18 @@ class Creature
     public:
         Creature(QJsonValue val);
 
+        Element             element() const    { return m_element; }
+        unsigned int        heroicRank() const { return m_heroicRank; }
+        QString             heroicStat() const { return m_heroicStat; }
+        unsigned int        id() const         { return m_id; }
+        QString             idName() const     { return m_idName; }
+        unsigned int        level() const      { return m_level; }
+        QString             name() const       { return m_name; }
+        unsigned int        rank() const       { return m_rank; }
+        QList<unsigned int> runes() const      { return m_runes; }
+        QList<unsigned int> spells() const     { return m_spells; }
+        unsigned int        xp() const         { return m_xp; }
+
     private:
         void element(QJsonValue val);
         void heroicRank(QJsonValue val);

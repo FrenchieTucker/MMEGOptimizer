@@ -28,6 +28,7 @@ SOURCES += \
     AuraBase.cpp \
     AuraSkillUp.cpp \
     CreatureBaseStat.cpp \
+    Creature_wdg.cpp \
     Guild.cpp \
     HeroicStat.cpp \
     ProcRuneParSubStat.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     AuraBase.h \
     AuraSkillUp.h \
     CreatureBaseStat.h \
+    Creature_wdg.h \
     Guild.h \
     HeroicStat.h \
     MMEGOptimizer_ctrl.h \
@@ -57,6 +59,7 @@ HEADERS += \
     global.h
 
 FORMS += \
+        Creature.ui \
         MMEGOptimizer.ui
 
 # Default rules for deployment.

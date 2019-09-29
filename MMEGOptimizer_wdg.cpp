@@ -21,6 +21,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "Profile.h"
 #include "Rune.h"
 #include "Creature.h"
+#include "Creature_wdg.h"
 
 #include "MMEGOptimizer_wdg.h"
 
@@ -29,21 +30,44 @@ MMEGOptimizer_wdg::MMEGOptimizer_wdg()
 {
     m_ui.setupUi(&m_wdg);
 
+    m_creatureLayout = new QVBoxLayout;
+    m_ui.m_creaturesWdg->setLayout(m_creatureLayout);
+
     QObject::connect(m_ui.actionImport, &QAction::triggered, this, &MMEGOptimizer_wdg::importDemande);
 }
 
 MMEGOptimizer_wdg::~MMEGOptimizer_wdg()
-{}
+{
+    qDeleteAll(m_creaturesWdgList);
+}
 
 void MMEGOptimizer_wdg::show()
 {
     m_wdg.show();
 }
 
-void MMEGOptimizer_wdg::fillCreatures(QList<Creature*>)
-{}
+void MMEGOptimizer_wdg::fillCreatures(QList<Creature*> creatures)
+{
+    for (Creature* c : creatures) {
+        fillCreature(c);
+    }
+}
 
-void MMEGOptimizer_wdg::fillGuild(Guild g)
+void MMEGOptimizer_wdg::fillCreature(Creature* creature)
+{
+    unsigned int creatureId = creature->id();
+    if (m_creaturesWdgList.contains(creatureId)) {
+        Creature_wdg* c = m_creaturesWdgList.value(creatureId, nullptr);
+        c->update(creature);
+        return;
+    }
+
+    Creature_wdg* c = new Creature_wdg(creature);
+    m_creaturesWdgList.insert(creatureId, c);
+    m_creatureLayout->addWidget(c->widget());
+}
+
+void MMEGOptimizer_wdg::fillGuild(const Guild& g)
 {
     m_ui.m_guildIdValue->setText(QString::number(g.id()));
     m_ui.m_guildNameValue->setText(g.name());

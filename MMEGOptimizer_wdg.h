@@ -20,7 +20,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #ifndef MMEGOPTIMIZER_WDG_H
 #define MMEGOPTIMIZER_WDG_H
 
-#include <QMainWindow>
+#include <QtWidgets/QMainWindow>
+#include <QtCore/QMap>
 
 #include "ui_MMEGOptimizer.h"
 
@@ -28,6 +29,7 @@ class Rune;
 class Profile;
 class Guild;
 class Creature;
+class Creature_wdg;
 
 class MMEGOptimizer_wdg : public QObject
 {
@@ -40,7 +42,8 @@ public:
     void show();
 
     void fillCreatures(QList<Creature*>);
-    void fillGuild(Guild);
+    void fillCreature(Creature* creature);
+    void fillGuild(const Guild &);
     void fillProfile(const Profile &);
     void fillRunes(QList<Rune*>);
     void fillVersion(QString);
@@ -51,6 +54,9 @@ signals:
 private:
     Ui::MMEGOptimizer_wdg m_ui;
     QMainWindow m_wdg;
+
+    QVBoxLayout* m_creatureLayout;
+    QMap<unsigned int, Creature_wdg*> m_creaturesWdgList;
 };
 
 #endif // MMEGOPTIMIZER_WDG_H
